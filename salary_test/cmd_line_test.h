@@ -28,3 +28,9 @@ TEST(CmdLine, ParseUnExistCommand)
 	EXPECT_EQ(cmd_line.parse(""), Command::kUnknown);
 	EXPECT_EQ(cmd_line.parse("   "), Command::kUnknown);
 }
+
+TEST(ExecuteCmd, Help)
+{
+	command_line cmd_line;
+	EXPECT_TRUE(cmd_line.exec_command(Command::kHelp));
+}

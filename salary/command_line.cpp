@@ -1,5 +1,6 @@
 #include "command_line.h"
 #include <map>
+#include <iostream>
 
 using namespace std;
 
@@ -46,4 +47,21 @@ std::string command_line::triming(const std::string& text) const
 	const auto strRange = strEnd - strBegin + 1;
 
 	return text.substr(strBegin, strRange);
+}
+
+bool command_line::exec_command(Command cmd) const
+{
+	if (cmd == Command::kHelp)
+	{
+		cout << "executing help command." << endl;
+		cout << "you can use those commands blow: " << endl;
+		for (const auto& it : cmds_)
+		{
+			cout << it << endl;
+		}
+
+		return true;
+	}
+
+	return false;
 }

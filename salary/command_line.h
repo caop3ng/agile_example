@@ -18,6 +18,7 @@ public:
 	command_line();
 
 	Command parse(const std::string& text) const;
+	bool exec_command(Command cmd) const;
 
 private:
 
