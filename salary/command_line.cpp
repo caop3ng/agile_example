@@ -13,6 +13,7 @@ map<string, Command> commands_dict = {
 	{ "help", Command::kHelp },
 	{ "exit", Command::kExit },
 	{ "clear", Command::kClear },
+	{ "timecard", Command::kTimeCard},
 };
 
 command_line::command_line()
@@ -47,6 +48,8 @@ bool command_line::exec_command(Command cmd) const
 		return exec_add();
 	case Command::kClear:
 		return exec_clear();
+	case Command::kTimeCard:
+		return exec_time_card();
 	default:
 		assert(0);
 		break;
@@ -138,5 +141,26 @@ bool command_line::exec_add() const
 bool command_line::exec_clear() const
 {
 	system("cls");
+	return true;
+}
+
+bool command_line::exec_time_card() const
+{
+	employee_time_card etc;
+
+	cout << "employee id: ";
+	cin >> etc.employee_id;
+
+	cout << "hours: ";
+	cin >> etc.hours;
+
+	etc.date_time = chrono::system_clock::now();
+
+	bool ret = salary_db::instance().add_time_card(etc);
+	if (!ret)
+	{
+		cout << "Failed to add time card." << endl;
+	}
+
 	return true;
 }

@@ -29,7 +29,7 @@ TEST(CmdLine, ParseUnExistCommand)
 	EXPECT_EQ(cmd_line.parse("   "), Command::kUnknown);
 }
 
-TEST(ExecuteCmd, All)
+TEST(ExecuteCmd, AllNormal)
 {
 	auto& db = salary_db::instance();
 	db.add_employee(0, "ll", "beijing", employee_type::HOURLY_WORKER);
@@ -45,4 +45,3 @@ TEST(ExecuteCmd, All)
 	//EXPECT_TRUE(cmd_line.exec_command(Command::kAdd));
 	//EXPECT_FALSE(cmd_line.exec_command(Command::kUnknown));
 }
-

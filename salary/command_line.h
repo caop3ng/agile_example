@@ -11,7 +11,8 @@ enum class Command
 	kChange,
 	kHelp,
 	kExit,
-	kClear
+	kClear,
+	kTimeCard,
 };
 
 class command_line
@@ -28,4 +29,5 @@ private:
 	bool exec_list() const;
 	bool exec_add() const;
 	bool exec_clear() const;
+	bool exec_time_card() const;
 };
