@@ -2,6 +2,8 @@
 #include <map>
 #include <iostream>
 
+#include "db.h"
+
 using namespace std;
 
 map<string, Command> commands_dict = {
@@ -51,17 +53,40 @@ std::string command_line::triming(const std::string& text) const
 
 bool command_line::exec_command(Command cmd) const
 {
-	if (cmd == Command::kHelp)
+	switch (cmd)
 	{
-		cout << "executing help command." << endl;
-		cout << "you can use those commands blow: " << endl;
-		for (const auto& it : cmds_)
-		{
-			cout << it << endl;
-		}
+	case Command::kHelp:
+		return exec_help();
+	case Command::kList:
+		return exec_list();
 
-		return true;
+	default:
+		assert(0);
+		break;
 	}
 
 	return false;
+}
+
+bool command_line::exec_help() const
+{
+	cout << "executing help command." << endl;
+	cout << "you can use those commands blow: " << endl;
+	for (const auto& it : cmds_)
+	{
+		cout << it << endl;
+	}
+
+	return true;
+}
+
+bool command_line::exec_list() const
+{
+	auto employees = salary_db::instance().get_all_employees();
+	for (const auto& e : employees)
+	{
+		cout << e.to_string() << endl;
+	}
+
+	return true;
 }

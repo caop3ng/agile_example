@@ -29,8 +29,20 @@ TEST(CmdLine, ParseUnExistCommand)
 	EXPECT_EQ(cmd_line.parse("   "), Command::kUnknown);
 }
 
-TEST(ExecuteCmd, Help)
+TEST(ExecuteCmd, All)
 {
+	auto& db = salary_db::instance();
+	db.add_employee(0, "ll", "beijing", employee_type::HOURLY_WORKER);
+	db.add_employee(1, "xiaoming", "shanghai", employee_type::COMMISSIONED_WORKER);
+	db.add_employee(2, "zhangsan", "guangzhou", employee_type::MONTHLY_WORKER);
+
+	string id = typeid(db).name();
+
 	command_line cmd_line;
 	EXPECT_TRUE(cmd_line.exec_command(Command::kHelp));
+	EXPECT_TRUE(cmd_line.exec_command(Command::kList));
+	//EXPECT_TRUE(cmd_line.exec_command(Command::kChange));
+	//EXPECT_TRUE(cmd_line.exec_command(Command::kAdd));
+	//EXPECT_FALSE(cmd_line.exec_command(Command::kUnknown));
 }
+

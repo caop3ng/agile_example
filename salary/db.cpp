@@ -207,3 +207,22 @@ int salary_db::get_service_amount(int member_id) const
 		}
 	}
 }
+
+std::vector<salary_employee> salary_db::get_all_employees() const
+{
+	vector<salary_employee> employees;
+	for (const auto& e : employees_)
+	{
+		employees.push_back(e.second);
+	}
+
+	return employees;
+}
+
+void salary_db::clear()
+{
+	employees_.clear();
+	time_cards_.clear();
+	sales_receipts_.clear();
+	society_members_.clear();
+}

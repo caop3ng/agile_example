@@ -6,33 +6,38 @@
 
 TEST(AddEmp, SucceedAddOneEmp)
 {
-	salary_db db;
+	auto& db = salary_db::instance();
+	db.clear();
 	EXPECT_TRUE(db.add_employee(0, "lilei", "addr", employee_type::MONTHLY_WORKER));
 	EXPECT_TRUE(db.get_employee(0).name == "lilei");
 }
 
 TEST(AddEmp, FailedAddOneEmp)
 {
-	salary_db db;
+	auto& db = salary_db::instance();
+	db.clear();
 	EXPECT_FALSE(db.add_employee(0, "", "addr", employee_type::MONTHLY_WORKER));
 }
 
 TEST(AddEmp, AddExistedOneEmp)
 {
-	salary_db db;
+	auto& db = salary_db::instance();
+	db.clear();
 	EXPECT_TRUE(db.add_employee(0, "lilei", "addr", employee_type::MONTHLY_WORKER));
 	EXPECT_FALSE(db.add_employee(0, "aa", "addr", employee_type::MONTHLY_WORKER));
 }
 
 TEST(DeleteEmp, DeleteUnexistEmp)
 {
-	salary_db db;
+	auto& db = salary_db::instance();
+	db.clear();
 	EXPECT_FALSE(db.delete_employee(0));
 }
 
 TEST(DeleteEmp, DeleteExistedEmp)
 {
-	salary_db db;
+	auto& db = salary_db::instance();
+	db.clear();
 	EXPECT_TRUE(db.add_employee(0, "lilei", "addr", employee_type::MONTHLY_WORKER));
 	EXPECT_TRUE(db.delete_employee(0));
 	EXPECT_TRUE(db.get_employee(0).name == "");
@@ -40,7 +45,8 @@ TEST(DeleteEmp, DeleteExistedEmp)
 
 TEST(AddTimeCard, AddOneTimeCardToUnexistEmp)
 {
-	salary_db db;
+	auto& db = salary_db::instance();
+	db.clear();
 	employee_time_card etc;
 	etc.employee_id = 0;
 	etc.date_time = chrono::system_clock::now();
@@ -51,7 +57,8 @@ TEST(AddTimeCard, AddOneTimeCardToUnexistEmp)
 
 TEST(AddTimeCard, AddOneTimeCardToExistEmp)
 {
-	salary_db db;
+	auto& db = salary_db::instance();
+	db.clear();
 	db.add_employee(0, "lilei", "addr", employee_type::HOURLY_WORKER);
 	employee_time_card etc;
 	etc.employee_id = 0;
@@ -62,7 +69,8 @@ TEST(AddTimeCard, AddOneTimeCardToExistEmp)
 
 TEST(AddTimeCard, AddTwoTimeCardToExistEmp)
 {
-	salary_db db;
+	auto& db = salary_db::instance();
+	db.clear();
 	db.add_employee(0, "lilei", "addr", employee_type::HOURLY_WORKER);
 	employee_time_card etc;
 	etc.employee_id = 0;
@@ -79,7 +87,8 @@ TEST(AddTimeCard, AddTwoTimeCardToExistEmp)
 
 TEST(AddTimeCard, AddTimeCardHourInvalid)
 {
-	salary_db db;
+	auto& db = salary_db::instance();
+	db.clear();
 	db.add_employee(0, "lilei", "addr", employee_type::HOURLY_WORKER);
 	employee_time_card etc;
 	etc.employee_id = 0;
@@ -91,7 +100,8 @@ TEST(AddTimeCard, AddTimeCardHourInvalid)
 
 TEST(AddTimeCard, AddTimeCardWorkerTypeInvalid)
 {
-	salary_db db;
+	auto& db = salary_db::instance();
+	db.clear();
 	db.add_employee(0, "lilei", "addr", employee_type::MONTHLY_WORKER);
 	employee_time_card etc;
 	etc.employee_id = 0;
@@ -102,7 +112,8 @@ TEST(AddTimeCard, AddTimeCardWorkerTypeInvalid)
 
 TEST(AddSalesReceipt, AddSalesReceiptToNotExistUser)
 {
-	salary_db db;
+	auto& db = salary_db::instance();
+	db.clear();
 	sales_receipt sr;
 	sr.employee_id = 0;
 	sr.date_time = chrono::system_clock::now();
@@ -112,7 +123,8 @@ TEST(AddSalesReceipt, AddSalesReceiptToNotExistUser)
 
 TEST(AddSalesReceipt, AddSalesReceiptToExistUser)
 {
-	salary_db db;
+	auto& db = salary_db::instance();
+	db.clear();
 	db.add_employee(0, "lilei", "addr", employee_type::COMMISSIONED_WORKER);
 
 	sales_receipt sr;
@@ -124,7 +136,8 @@ TEST(AddSalesReceipt, AddSalesReceiptToExistUser)
 
 TEST(AddSalesReceipt, AddSalesReceiptToWrongUser)
 {
-	salary_db db;
+	auto& db = salary_db::instance();
+	db.clear();
 	db.add_employee(0, "lilei", "addr", employee_type::MONTHLY_WORKER);
 
 	sales_receipt sr;
@@ -134,10 +147,9 @@ TEST(AddSalesReceipt, AddSalesReceiptToWrongUser)
 	EXPECT_FALSE(db.add_sales_receipt(sr));
 }
 
-// 等数据库有支付日期记录的时候，可以判断当前凭条日期需要在其之后。
 //TEST(AddSalesReceipt, OldDateSalesReceipt)
 //{
-//	salary_db db;
+//	auto& db = salary_db::instance();
 //	db.add_employee(0, "lilei", "addr", employee_type::COMMISSIONED_WORKER);
 //
 //	sales_receipt sr;
@@ -149,7 +161,8 @@ TEST(AddSalesReceipt, AddSalesReceiptToWrongUser)
 
 TEST(AddSalesReceipt, InvalidAmount)
 {
-	salary_db db;
+	auto& db = salary_db::instance();
+	db.clear();
 	db.add_employee(0, "lilei", "addr", employee_type::COMMISSIONED_WORKER);
 
 	sales_receipt sr;
@@ -162,7 +175,8 @@ TEST(AddSalesReceipt, InvalidAmount)
 
 TEST(AddEmpMember, ToExistEmployee)
 {
-	salary_db db;
+	auto& db = salary_db::instance();
+	db.clear();
 	int dues = 100;
 	db.add_employee(0, "lilei", "addr", employee_type::COMMISSIONED_WORKER);
 
@@ -172,7 +186,8 @@ TEST(AddEmpMember, ToExistEmployee)
 
 TEST(AddEmpMember, ToNotExistMember)
 {
-	salary_db db;
+	auto& db = salary_db::instance();
+	db.clear();
 	int dues = 100;
 	db.add_employee(0, "lilei", "addr", employee_type::COMMISSIONED_WORKER);
 
@@ -182,7 +197,8 @@ TEST(AddEmpMember, ToNotExistMember)
 
 TEST(AddEmpMember, MemberBoundEmployee)
 {
-	salary_db db;
+	auto& db = salary_db::instance();
+	db.clear();
 	int dues = 100;
 	db.add_employee(0, "lilei", "addr", employee_type::COMMISSIONED_WORKER);
 	db.add_employee(1, "zl", "addr", employee_type::HOURLY_WORKER);
@@ -194,7 +210,8 @@ TEST(AddEmpMember, MemberBoundEmployee)
 
 TEST(AddEmpMember, InvalidDues)
 {
-	salary_db db;
+	auto& db = salary_db::instance();
+	db.clear();
 	int dues = -1;
 	db.add_employee(0, "lilei", "addr", employee_type::COMMISSIONED_WORKER);
 
@@ -203,7 +220,8 @@ TEST(AddEmpMember, InvalidDues)
 
 TEST(ServiceCharge, ToExistMember)
 {
-	salary_db db;
+	auto& db = salary_db::instance();
+	db.clear();
 	int dues = 100;
 	db.add_employee(0, "lilei", "addr", employee_type::COMMISSIONED_WORKER);
 
@@ -216,7 +234,8 @@ TEST(ServiceCharge, ToExistMember)
 
 TEST(ServiceCharge, ToNotExistMember)
 {
-	salary_db db;
+	auto& db = salary_db::instance();
+	db.clear();
 	int dues = 100;
 	db.add_employee(0, "lilei", "addr", employee_type::COMMISSIONED_WORKER);
 

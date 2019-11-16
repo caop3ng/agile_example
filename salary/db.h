@@ -7,6 +7,12 @@
 class salary_db
 {
 public:
+	static salary_db& instance()
+	{
+		static salary_db db;
+		return db;
+	}
+
 	bool add_employee(int id, const std::string& name, const std::string& address, employee_type emp_type);
 	salary_employee get_employee(int id);
 	bool delete_employee(int id);
@@ -16,7 +22,13 @@ public:
 	int get_society_dues(int member_id) const;
 	bool service_charge(int member_id, int amount);
 	int get_service_amount(int member_id) const;
+	std::vector<salary_employee> get_all_employees() const;
+
+	void clear();
 private:
+	salary_db() {};
+	salary_db(salary_db&) = delete;
+
 	std::map<int, salary_employee> employees_;
 	std::vector<employee_time_card> time_cards_;
 	std::vector<sales_receipt> sales_receipts_;

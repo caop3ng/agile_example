@@ -23,6 +23,8 @@ public:
 private:
 
 	std::string triming(const std::string& text) const;
+	bool exec_help() const;
+	bool exec_list() const;
 
 	std::vector<std::string> cmds_;
 };
