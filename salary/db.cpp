@@ -3,26 +3,32 @@
 #include <iostream>
 using namespace std;
 
-bool salary_db::add_employee(int id, const std::string& name, const std::string& address, employee_type emp_type)
+bool salary_db::add_employee(const salary_employee& emp)
 {
-	auto it = employees_.find(id);
+	auto it = employees_.find(emp.id);
 	if (it != employees_.end())
 	{
 		cout << "employee has exist" << endl;
 		return false;
 	}
 
-	if (id < 0
-		|| name.empty()
-		|| address.empty()
-		|| emp_type == employee_type::UNSPECIFIED)
+	if (emp.id < 0
+		|| emp.name.empty()
+		|| emp.address.empty()
+		|| emp.emp_type == employee_type::UNSPECIFIED)
 	{
 		cout << "paramaters invalid" << endl;
 		return false;
 	}
 
+	employees_.insert(std::make_pair(emp.id, emp));
+	return true;
+}
+
+bool salary_db::add_employee(int id, const std::string& name, const std::string& address, employee_type emp_type)
+{
 	salary_employee emp{ id, name, address, emp_type, 0, 0, chrono::system_clock::now()};
-	employees_.insert(std::make_pair(id, emp));
+	add_employee(emp);
 
 	return true;
 }

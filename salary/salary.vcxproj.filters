@@ -19,6 +19,9 @@
     <Filter Include="cmd_line">
       <UniqueIdentifier>{0513126b-737a-425f-b82f-d4a4b6578203}</UniqueIdentifier>
     </Filter>
+    <Filter Include="util">
+      <UniqueIdentifier>{95be627e-8de5-4fb3-a407-a408a8d08cde}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="salary.cpp">
@@ -30,6 +33,9 @@
     <ClCompile Include="command_line.cpp">
       <Filter>cmd_line</Filter>
     </ClCompile>
+    <ClCompile Include="util.cpp">
+      <Filter>util</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="db.h">
@@ -40,6 +46,12 @@
     </ClInclude>
     <ClInclude Include="command_line.h">
       <Filter>cmd_line</Filter>
+    </ClInclude>
+    <ClInclude Include="util.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="salary.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

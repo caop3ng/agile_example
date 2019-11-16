@@ -14,6 +14,7 @@ public:
 	}
 
 	bool add_employee(int id, const std::string& name, const std::string& address, employee_type emp_type);
+	bool add_employee(const salary_employee& emp);
 	salary_employee get_employee(int id);
 	bool delete_employee(int id);
 	bool add_time_card(const employee_time_card& time_card);

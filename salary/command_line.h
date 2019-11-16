@@ -9,7 +9,9 @@ enum class Command
 	kList,
 	kAdd,
 	kChange,
-	kHelp
+	kHelp,
+	kExit,
+	kClear
 };
 
 class command_line
@@ -22,9 +24,8 @@ public:
 
 private:
 
-	std::string triming(const std::string& text) const;
 	bool exec_help() const;
 	bool exec_list() const;
-
-	std::vector<std::string> cmds_;
+	bool exec_add() const;
+	bool exec_clear() const;
 };

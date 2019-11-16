@@ -1,8 +1,8 @@
 #include "command_line.h"
 #include <map>
 #include <iostream>
-
-#include "db.h"
+#include <assert.h>
+#include "salary.h"
 
 using namespace std;
 
@@ -11,14 +11,12 @@ map<string, Command> commands_dict = {
 	{ "add", Command::kAdd },
 	{ "change", Command::kChange },
 	{ "help", Command::kHelp },
+	{ "exit", Command::kExit },
+	{ "clear", Command::kClear },
 };
 
 command_line::command_line()
 {
-	cmds_.push_back("list");
-	cmds_.push_back("add");
-	cmds_.push_back("change");
-	cmds_.push_back("help");
 }
 
 Command command_line::parse(const std::string& text) const
@@ -37,20 +35,6 @@ Command command_line::parse(const std::string& text) const
 
 }
 
-std::string command_line::triming(const std::string& text) const
-{
-	string whitespace = " \t";
-
-	const auto strBegin = text.find_first_not_of(whitespace);
-	if (strBegin == std::string::npos)
-		return ""; // no content
-
-	const auto strEnd = text.find_last_not_of(whitespace);
-	const auto strRange = strEnd - strBegin + 1;
-
-	return text.substr(strBegin, strRange);
-}
-
 bool command_line::exec_command(Command cmd) const
 {
 	switch (cmd)
@@ -59,7 +43,10 @@ bool command_line::exec_command(Command cmd) const
 		return exec_help();
 	case Command::kList:
 		return exec_list();
-
+	case Command::kAdd:
+		return exec_add();
+	case Command::kClear:
+		return exec_clear();
 	default:
 		assert(0);
 		break;
@@ -70,11 +57,10 @@ bool command_line::exec_command(Command cmd) const
 
 bool command_line::exec_help() const
 {
-	cout << "executing help command." << endl;
 	cout << "you can use those commands blow: " << endl;
-	for (const auto& it : cmds_)
+	for (const auto& it : commands_dict)
 	{
-		cout << it << endl;
+		cout << it.first << endl;
 	}
 
 	return true;
@@ -83,10 +69,74 @@ bool command_line::exec_help() const
 bool command_line::exec_list() const
 {
 	auto employees = salary_db::instance().get_all_employees();
+
+	if (employees.empty())
+	{
+		cout << "There is no employee." << endl;
+		return true;
+	}
+
+	cout << "Employee: " << endl;
 	for (const auto& e : employees)
 	{
 		cout << e.to_string() << endl;
 	}
 
+	return true;
+}
+
+bool command_line::exec_add() const
+{
+	salary_employee emp;
+
+	cout << "id: ";
+	cin >> emp.id;
+
+	cout << "name: ";
+	cin >> emp.name;
+
+	cout << "address: ";
+	cin >> emp.address;
+
+	while (true)
+	{
+		cout << "employee type, only number. 1: hourly worker, 2: monthly worker, 3: commissioned worder." << endl;
+		cout << "employee type: ";
+		int type;
+		cin >> type;
+		if (IsValidEmployeeType(static_cast<employee_type>(type)))
+		{
+			emp.emp_type = static_cast<employee_type>(type);
+			break;
+		}
+		else
+		{
+			cout << "invalid type, number: " << type << ". please re-enter." << endl;
+		}
+	}
+	
+	cout << "society dues: ";
+	cin >> emp.society_dues;
+
+	emp.service_amount = 0;
+	emp.create_time = std::chrono::system_clock::now();
+
+	bool ret = salary_db::instance().add_employee(emp);
+	if (ret)
+	{
+		cout << "Sucessfully add an employee: " << endl;
+		cout << emp.to_string() << endl;
+	}
+	else
+	{
+		cout << "Failed to add employee." << endl;
+	}
+
+	return ret;
+}
+
+bool command_line::exec_clear() const
+{
+	system("cls");
 	return true;
 }

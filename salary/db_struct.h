@@ -10,7 +10,19 @@ enum class employee_type
 	HOURLY_WORKER = 1,
 	MONTHLY_WORKER = 2,
 	COMMISSIONED_WORKER = 3,
+	kEmployeeType_MAX = COMMISSIONED_WORKER,
 };
+
+inline bool IsValidEmployeeType(employee_type type)
+{
+	if (type <= employee_type::UNSPECIFIED
+		|| type > employee_type::kEmployeeType_MAX)
+	{
+		return false;
+	}
+
+	return true;
+}
 
 struct salary_employee
 {

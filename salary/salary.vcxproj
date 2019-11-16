@@ -154,11 +154,14 @@
     <ClCompile Include="command_line.cpp" />
     <ClCompile Include="db.cpp" />
     <ClCompile Include="salary.cpp" />
+    <ClCompile Include="util.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="command_line.h" />
     <ClInclude Include="db.h" />
     <ClInclude Include="db_struct.h" />
+    <ClInclude Include="salary.h" />
+    <ClInclude Include="util.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
