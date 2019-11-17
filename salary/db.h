@@ -16,6 +16,8 @@ public:
 	bool add_employee(int id, const std::string& name, const std::string& address, employee_type emp_type);
 	bool add_employee(const salary_employee& emp);
 	salary_employee get_employee(int id);
+	bool has_employee(int id) const; // temp
+	bool change_employee(const salary_employee& emp);
 	bool delete_employee(int id);
 	bool add_time_card(const employee_time_card& time_card);
 	bool add_sales_receipt(const sales_receipt& sr);
@@ -34,4 +36,5 @@ private:
 	std::vector<employee_time_card> time_cards_;
 	std::vector<sales_receipt> sales_receipts_;
 	std::map<int, int> society_members_;
+	std::map<int, int> society_members_2_;
 };

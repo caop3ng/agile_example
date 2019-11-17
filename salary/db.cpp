@@ -28,9 +28,7 @@ bool salary_db::add_employee(const salary_employee& emp)
 bool salary_db::add_employee(int id, const std::string& name, const std::string& address, employee_type emp_type)
 {
 	salary_employee emp{ id, name, address, emp_type, 0, 0, chrono::system_clock::now()};
-	add_employee(emp);
-
-	return true;
+	return add_employee(emp);
 }
 
 salary_employee salary_db::get_employee(int id)
@@ -42,6 +40,24 @@ salary_employee salary_db::get_employee(int id)
 	}
 
 	return salary_employee();
+}
+
+bool salary_db::has_employee(int id) const
+{
+	return employees_.find(id) != employees_.end();
+}
+
+bool salary_db::change_employee(const salary_employee& emp)
+{
+	auto it = employees_.find(emp.id);
+	if (it == employees_.end())
+	{
+		cout << "employee not exist id: " << emp.id;
+		return false;
+	}
+
+	it->second = emp;
+	return true;
 }
 
 bool salary_db::delete_employee(int id)
@@ -129,11 +145,14 @@ bool salary_db::add_member(int employee_id, int member_id, int dues)
 	}
 	else
 	{
-		auto member = society_members_.find(member_id);
-		if (member == society_members_.end())
+		auto emp_id = society_members_.find(member_id);
+		auto mem_id = society_members_2_.find(employee_id);
+		if (emp_id == society_members_.end()
+			&& mem_id == society_members_2_.end())
 		{
 			it->second.society_dues = dues;
 			society_members_.insert(make_pair(member_id, employee_id));
+			society_members_2_.insert(make_pair(employee_id, member_id));
 			return true;
 		}
 		else
@@ -231,4 +250,5 @@ void salary_db::clear()
 	time_cards_.clear();
 	sales_receipts_.clear();
 	society_members_.clear();
+	society_members_2_.clear();
 }

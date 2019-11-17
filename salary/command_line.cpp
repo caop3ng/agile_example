@@ -14,6 +14,15 @@ map<string, Command> commands_dict = {
 	{ "exit", Command::kExit },
 	{ "clear", Command::kClear },
 	{ "timecard", Command::kTimeCard},
+	{ "salesreceipt", Command::kSalesReceipt},
+	{ "servicecharge", Command::kServiceCharge},
+	{ "chgemp", Command::kChgEmp},
+};
+
+map<EmployeeProperties, string> properties_descriptor
+{
+	{ EmployeeProperties::kName, "name" },
+	{ EmployeeProperties::kAddress, "address" },
 };
 
 command_line::command_line()
@@ -50,6 +59,12 @@ bool command_line::exec_command(Command cmd) const
 		return exec_clear();
 	case Command::kTimeCard:
 		return exec_time_card();
+	case Command::kSalesReceipt:
+		return exec_sales_receipt();
+	case Command::kServiceCharge:
+		return exec_service_charge();
+	case Command::kChgEmp:
+		return exec_chg_emp();
 	default:
 		assert(0);
 		break;
@@ -162,5 +177,145 @@ bool command_line::exec_time_card() const
 		cout << "Failed to add time card." << endl;
 	}
 
+	return true;
+}
+
+bool command_line::exec_sales_receipt() const
+{
+	sales_receipt sr;
+	cout << "employee id: ";
+	cin >> sr.employee_id;
+
+	cout << "amount: ";
+	cin >> sr.amount;
+
+	sr.date_time = chrono::system_clock::now();
+
+	bool ret = salary_db::instance().add_sales_receipt(sr);
+	if (!ret)
+	{
+		cout << "Failed to add sales receipt." << endl;
+	}
+
+	return true;
+}
+
+bool command_line::exec_service_charge() const
+{
+	int member_id;
+	cout << "member id: ";
+	cin >> member_id;
+
+	int amount;
+	cout << "amount: ";
+	cin >> amount;
+
+	bool ret = salary_db::instance().service_charge(member_id, amount);
+	if (!ret)
+	{
+		cout << "Failed to add service charge." << endl;
+	}
+
+	return true;
+}
+
+bool command_line::exec_chg_emp() const
+{
+	//cout << "employee id: ";
+	//int employee_id;
+	//cin >> employee_id;
+
+	//cout << "member id: ";
+	//int member_id;
+	//cin >> member_id;
+
+	//cout << "dues: ";
+	//int dues;
+	//cin >> dues;
+
+	//bool ret = salary_db::instance().add_member(employee_id, member_id, dues);
+	//if (!ret)
+	//{
+	//	cout << "Failed to add user member." << endl;
+	//}
+	
+	cout << "you can select which property to change." << endl;
+	for (EmployeeProperties i = EmployeeProperties::kName; i <= EmployeeProperties::EmployeeProperties_MAX; ++i)
+	{
+		cout << static_cast<int>(i) << ": " << properties_descriptor[i];
+		if (i < EmployeeProperties::EmployeeProperties_MAX)
+		{
+			cout << ", ";
+		}
+	}
+	cout << endl;
+	cout << ">>> ";
+
+	int property;
+	while (1)
+	{
+		cin >> property;
+		if (property < static_cast<int>(EmployeeProperties::kName)
+			|| property > static_cast<int>(EmployeeProperties::EmployeeProperties_MAX))
+		{
+			cout << "wrong input, please re-enter" << endl;
+			cout << ">>>";
+			continue;
+		}
+		else
+		{
+			break;
+		}
+	}
+
+	switch (static_cast<EmployeeProperties>(property))
+	{
+	case EmployeeProperties::kName:
+		return exec_chg_emp_name();
+	case EmployeeProperties::kAddress:
+		return exec_chg_emp_address();
+	default:
+		assert(0);
+		break;
+	}
+
+	return false;
+}
+
+bool command_line::exec_chg_emp_name() const
+{
+	int emp_id;
+	cout << "employee id:";
+	cin >> emp_id;
+
+	string name;
+	cout << "new name: ";
+	cin >> name;
+
+	auto& db = salary_db::instance();
+	if (db.has_employee(emp_id))
+	{
+		auto emp = db.get_employee(emp_id);
+		emp.name = name;
+		bool ret = salary_db::instance().change_employee(emp);
+		if (ret)
+		{
+			cout << "Sucessfully changed employee name." << endl;
+		}
+		else
+		{
+			cout << "Failed to change employee name." << endl;
+		}
+	}
+	else
+	{
+		cout << "Failed to change employee name, employee not exist" << endl;
+	}
+	
+	return true;
+}
+
+bool command_line::exec_chg_emp_address() const
+{
 	return true;
 }

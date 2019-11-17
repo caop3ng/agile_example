@@ -13,7 +13,29 @@ enum class Command
 	kExit,
 	kClear,
 	kTimeCard,
+	kSalesReceipt,
+	kServiceCharge,
+	kChgEmp,
+	kChgEmpName,
 };
+
+enum class EmployeeProperties
+{
+	kUnknown = 0,
+	kName = 1,
+	kAddress = 2,
+	EmployeeProperties_MAX = kAddress,
+};
+
+inline EmployeeProperties& operator++(EmployeeProperties& p)
+{
+	return p = static_cast<EmployeeProperties>(static_cast<int>(p) + 1);
+}
+
+inline bool operator<(EmployeeProperties& a, EmployeeProperties& b)
+{
+	return static_cast<int>(a) < static_cast<int>(b);
+}
 
 class command_line
 {
@@ -30,4 +52,10 @@ private:
 	bool exec_add() const;
 	bool exec_clear() const;
 	bool exec_time_card() const;
+	bool exec_sales_receipt() const;
+	bool exec_service_charge() const;
+	bool exec_chg_emp() const;
+
+	bool exec_chg_emp_name() const;
+	bool exec_chg_emp_address() const;
 };

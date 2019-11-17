@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <gtest/gtest.h>
+#include "util.cpp"
 
 #include "db_test.h"
 #include "cmd_line_test.h"

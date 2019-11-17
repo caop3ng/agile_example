@@ -43,6 +43,20 @@ TEST(DeleteEmp, DeleteExistedEmp)
 	EXPECT_TRUE(db.get_employee(0).name == "");
 }
 
+TEST(ChangeEmp, ChangeName)
+{
+	auto& db = salary_db::instance();
+	db.clear();
+
+	salary_employee se{ 0, "lilei", "addr", employee_type::MONTHLY_WORKER };
+	EXPECT_TRUE(db.add_employee(se));
+	se.name = "cxx";
+	EXPECT_TRUE(db.change_employee(se));
+
+	salary_employee se_not_exist{ 1, "lilei", "addr", employee_type::MONTHLY_WORKER };
+	EXPECT_FALSE(db.change_employee(se_not_exist));
+}
+
 TEST(AddTimeCard, AddOneTimeCardToUnexistEmp)
 {
 	auto& db = salary_db::instance();
@@ -205,6 +219,7 @@ TEST(AddEmpMember, MemberBoundEmployee)
 
 	EXPECT_TRUE(db.add_member(0, 0, dues));
 	EXPECT_FALSE(db.add_member(1, 0, dues));
+	EXPECT_FALSE(db.add_member(0, 1, dues));
 	EXPECT_EQ(100, db.get_society_dues(0));
 }
 
