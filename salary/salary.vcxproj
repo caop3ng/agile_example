@@ -153,6 +153,7 @@
   <ItemGroup>
     <ClCompile Include="command_line.cpp" />
     <ClCompile Include="db.cpp" />
+    <ClCompile Include="employee.cpp" />
     <ClCompile Include="salary.cpp" />
     <ClCompile Include="util.cpp" />
   </ItemGroup>
@@ -160,6 +161,7 @@
     <ClInclude Include="command_line.h" />
     <ClInclude Include="db.h" />
     <ClInclude Include="db_struct.h" />
+    <ClInclude Include="employee.h" />
     <ClInclude Include="salary.h" />
     <ClInclude Include="util.h" />
   </ItemGroup>

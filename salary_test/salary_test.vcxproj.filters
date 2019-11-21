@@ -29,5 +29,8 @@
     <ClInclude Include="cmd_line_test.h">
       <Filter>tests</Filter>
     </ClInclude>
+    <ClInclude Include="pay_test.h">
+      <Filter>tests</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

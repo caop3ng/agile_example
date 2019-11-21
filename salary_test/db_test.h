@@ -2,7 +2,6 @@
 
 #include <iostream>
 #include <gtest/gtest.h>
-#include "db.cpp"
 
 TEST(AddEmp, SucceedAddOneEmp)
 {
