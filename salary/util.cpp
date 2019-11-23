@@ -37,29 +37,22 @@ bool date_is_month_last_work_day(time_t t)
 		auto week_day = today.day_of_week();
 		if (work_day(week_day.as_enum()))
 		{
-			if (today == today.end_of_month())
+			date next_work_day = today + days(1);
+			while (!work_day(next_work_day.day_of_week().as_enum()))
 			{
-				return true;
+				next_work_day = next_work_day + days(1);
+			}
+
+			date next_month(today.year(), today.month(), 1);
+			next_month += months(1);
+
+			if (next_work_day < next_month)
+			{
+				return false;
 			}
 			else
 			{
-				date next_work_day = today + days(1);
-				while (!work_day(next_work_day.day_of_week().as_enum()))
-				{
-					next_work_day = next_work_day + days(1);
-				}
-
-				date next_month(today.year(), today.month(), 1);
-				next_month += months(1);
-
-				if (next_work_day < next_month)
-				{
-					return false;
-				}
-				else
-				{
-					return true;
-				}
+				return true;
 			}
 		}
 		else
