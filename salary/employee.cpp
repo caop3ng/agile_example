@@ -37,5 +37,6 @@ bool salary_employee::pay(std::chrono::system_clock::time_point pay_day)
 
 bool salary_employee::pay_monthly(std::chrono::system_clock::time_point pay_day)
 {
+	
 	return false;
 }

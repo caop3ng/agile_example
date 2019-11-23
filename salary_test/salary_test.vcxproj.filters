@@ -32,5 +32,8 @@
     <ClInclude Include="pay_test.h">
       <Filter>tests</Filter>
     </ClInclude>
+    <ClInclude Include="util_test.h">
+      <Filter>tests</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

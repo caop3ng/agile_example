@@ -7,6 +7,7 @@
 #include "employee.cpp"
 #include "db.cpp"
 
+#include "util_test.h"
 #include "db_test.h"
 #include "cmd_line_test.h"
 #include "pay_test.h"

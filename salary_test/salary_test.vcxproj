@@ -163,6 +163,7 @@
     <ClInclude Include="cmd_line_test.h" />
     <ClInclude Include="db_test.h" />
     <ClInclude Include="pay_test.h" />
+    <ClInclude Include="util_test.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
