@@ -3,6 +3,7 @@
 #include <map>
 #include <vector>
 #include "db_struct.h"
+#include "employee.h"
 
 class salary_db
 {
@@ -16,6 +17,7 @@ public:
 	bool add_employee(int id, const std::string& name, const std::string& address, employee_type emp_type);
 	bool add_employee(const salary_employee& emp);
 	salary_employee get_employee(int id);
+	std::vector<salary_employee> get_all_employees() const;
 	bool has_employee(int id) const; // temp
 	bool change_employee(const salary_employee& emp);
 	bool delete_employee(int id);
@@ -25,7 +27,6 @@ public:
 	int get_society_dues(int member_id) const;
 	bool service_charge(int member_id, int amount);
 	int get_service_amount(int member_id) const;
-	std::vector<salary_employee> get_all_employees() const;
 
 	void clear();
 private:

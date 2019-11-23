@@ -4,8 +4,6 @@
 #include <chrono>
 #include <sstream>
 
-#include "employee.h"
-
 struct employee_time_card
 {
 	int employee_id;

@@ -27,7 +27,12 @@ bool salary_db::add_employee(const salary_employee& emp)
 
 bool salary_db::add_employee(int id, const std::string& name, const std::string& address, employee_type emp_type)
 {
-	salary_employee emp{ id, name, address, emp_type, 0, 0, chrono::system_clock::now()};
+	salary_employee emp;
+	emp.id = id;
+	emp.name = name;
+	emp.address = address;
+	emp.emp_type = emp_type;
+	emp.create_time = chrono::system_clock::now();
 	return add_employee(emp);
 }
 
@@ -41,6 +46,18 @@ salary_employee salary_db::get_employee(int id)
 
 	return salary_employee();
 }
+
+std::vector<salary_employee> salary_db::get_all_employees() const
+{
+	vector<salary_employee> employees;
+	for (const auto& e : employees_)
+	{
+		employees.push_back(e.second);
+	}
+
+	return employees;
+}
+
 
 bool salary_db::has_employee(int id) const
 {
@@ -231,17 +248,6 @@ int salary_db::get_service_amount(int member_id) const
 			return emp->second.service_amount;
 		}
 	}
-}
-
-std::vector<salary_employee> salary_db::get_all_employees() const
-{
-	vector<salary_employee> employees;
-	for (const auto& e : employees_)
-	{
-		employees.push_back(e.second);
-	}
-
-	return employees;
 }
 
 void salary_db::clear()

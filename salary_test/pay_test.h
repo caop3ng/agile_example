@@ -18,13 +18,10 @@ TEST(Pay, MonthlyEmployee)
 	emp.address = "xx";
 
 	db.add_employee(emp);
-
 	auto need_pay_emp = db.get_employee(0);
 
-	auto now = chrono::system_clock::now();
-	auto now_t = chrono::system_clock::to_time_t(now);
 	tm pay_day;
-	localtime_s(&pay_day, &now_t);
+	pay_day.tm_year = 2019 - 1900;
 	pay_day.tm_mon = 10;
 	pay_day.tm_mday = 29;
 	auto pay_day_t = mktime(&pay_day);

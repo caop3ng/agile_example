@@ -17,12 +17,15 @@ map<string, Command> commands_dict = {
 	{ "salesreceipt", Command::kSalesReceipt},
 	{ "servicecharge", Command::kServiceCharge},
 	{ "chgemp", Command::kChgEmp},
+	{ "pay", Command::kPay},
 };
 
 map<EmployeeProperties, string> properties_descriptor
 {
 	{ EmployeeProperties::kName, "name" },
 	{ EmployeeProperties::kAddress, "address" },
+	{ EmployeeProperties::kMonthlyPay, "montly pay" },
+	{ EmployeeProperties::kPaymentMode, "payment mode" },
 };
 
 command_line::command_line()
@@ -65,6 +68,8 @@ bool command_line::exec_command(Command cmd) const
 		return exec_service_charge();
 	case Command::kChgEmp:
 		return exec_chg_emp();
+	case Command::kPay:
+		return exec_pay();
 	default:
 		assert(0);
 		break;
@@ -219,26 +224,36 @@ bool command_line::exec_service_charge() const
 	return true;
 }
 
+bool command_line::exec_pay() const
+{
+	auto& db = salary_db::instance();
+
+	tm tm_t = { 0 };
+	tm_t.tm_year = 2019 - 1900;
+	tm_t.tm_mon = 10;
+	tm_t.tm_mday = 29;
+	auto t = mktime(&tm_t);
+
+	auto all_employees = db.get_all_employees();
+	for (auto& emp : all_employees)
+	{
+		if (date_is_month_last_work_day(t))
+		{
+			if (emp.emp_type == employee_type::MONTHLY_WORKER)
+			{
+				cout << "pay monthly employe, id: " << emp.id
+					<< ", name: " << emp.name
+					<< ", payment mode: " << payment_mode_descriptor(emp.payment_mode_)
+					<< ", monthly pay: " << emp.monthly_pay << endl;
+			}
+		}
+	}
+
+	return true;
+}
+
 bool command_line::exec_chg_emp() const
 {
-	//cout << "employee id: ";
-	//int employee_id;
-	//cin >> employee_id;
-
-	//cout << "member id: ";
-	//int member_id;
-	//cin >> member_id;
-
-	//cout << "dues: ";
-	//int dues;
-	//cin >> dues;
-
-	//bool ret = salary_db::instance().add_member(employee_id, member_id, dues);
-	//if (!ret)
-	//{
-	//	cout << "Failed to add user member." << endl;
-	//}
-	
 	cout << "you can select which property to change." << endl;
 	for (EmployeeProperties i = EmployeeProperties::kName; i <= EmployeeProperties::EmployeeProperties_MAX; ++i)
 	{
@@ -268,54 +283,98 @@ bool command_line::exec_chg_emp() const
 		}
 	}
 
+	int emp_id;
+	auto& db = salary_db::instance();
+	while (1)
+	{
+		cout << "employee id: ";
+		cin >> emp_id;
+		if (db.has_employee(emp_id))
+		{
+			break;
+		}
+		else
+		{
+			cout << "employee not exist, please re-enter" << endl;
+		}
+	}
+
+	auto emp = db.get_employee(emp_id);
+	
 	switch (static_cast<EmployeeProperties>(property))
 	{
 	case EmployeeProperties::kName:
-		return exec_chg_emp_name();
+		get_changed_name(emp);
+		break;
 	case EmployeeProperties::kAddress:
 		return exec_chg_emp_address();
+		break;
+	case EmployeeProperties::kMonthlyPay:
+		get_changed_monthly_pay(emp);
+		break;
+	case EmployeeProperties::kPaymentMode:
+		get_changed_payment_mode(emp);
+		break;
 	default:
 		assert(0);
+		return false;
 		break;
 	}
 
-	return false;
+	string property_name = properties_descriptor[static_cast<EmployeeProperties>(property)];
+	if (db.change_employee(emp))
+	{
+		cout << "Sucessfully changed employee " << property_name << "." << endl;
+		return true;
+	}
+	else
+	{
+		cout << "Failed to change employee " << property_name << "." << endl;
+		return false;
+	}
 }
 
-bool command_line::exec_chg_emp_name() const
+void command_line::get_changed_name(salary_employee& emp) const
 {
-	int emp_id;
-	cout << "employee id:";
-	cin >> emp_id;
-
 	string name;
 	cout << "new name: ";
 	cin >> name;
 
-	auto& db = salary_db::instance();
-	if (db.has_employee(emp_id))
-	{
-		auto emp = db.get_employee(emp_id);
-		emp.name = name;
-		bool ret = salary_db::instance().change_employee(emp);
-		if (ret)
-		{
-			cout << "Sucessfully changed employee name." << endl;
-		}
-		else
-		{
-			cout << "Failed to change employee name." << endl;
-		}
-	}
-	else
-	{
-		cout << "Failed to change employee name, employee not exist" << endl;
-	}
-	
-	return true;
+	emp.name = name;
 }
 
 bool command_line::exec_chg_emp_address() const
 {
 	return true;
+}
+
+void command_line::get_changed_monthly_pay(salary_employee& emp) const
+{
+	int monthly_pay;
+	cout << "monthly pay: ";
+	cin >> monthly_pay;
+
+	emp.monthly_pay = monthly_pay;
+}
+
+void command_line::get_changed_payment_mode(salary_employee& emp) const
+{
+	int new_mode;
+	cout << "monthly mode, 1: postal address, 2: cashier keeping, 3: deposit to bank" << endl;
+	while (1)
+	{
+		cin >> new_mode;
+		auto mode = static_cast<payment_mode>(new_mode);
+		if (payment_mode::kPostalAddress <= mode
+			&& mode <= payment_mode::kBank)
+		{
+			break;
+		}
+		else
+		{
+			cout << "wrong payment mode, please re-enter" << endl;
+		}
+	}
+
+	emp.payment_mode_ = static_cast<payment_mode>(new_mode);
 }

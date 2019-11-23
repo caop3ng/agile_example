@@ -1,15 +1,27 @@
 #include "salary.h"
 #include "employee.h"
 
+salary_employee::salary_employee()
+	: id(0),
+	emp_type(employee_type::UNSPECIFIED),
+	society_dues(0),
+	service_amount(0),
+	monthly_pay(0),
+	payment_mode_(payment_mode::UNSPECIFIED)
+{
+}
+
 std::string salary_employee::to_string() const
 {
 	std::stringstream ss;
-	ss << "id: " << id
-		<< " name: " << name
-		<< " address: " << address
-		<< " type: " << static_cast<int>(emp_type)
-		<< " society_dues: " << society_dues
-		<< " service_amount: " << service_amount
+	ss << "id: " << id << "\n"
+		<< " name: " << name << "\n"
+		<< " address: " << address << "\n"
+		<< " type: " << employee_type_descriptor(emp_type) << "\n"
+		<< " society_dues: " << society_dues << "\n"
+		<< " service_amount: " << service_amount << "\n"
+		<< " monthly_pay: " << monthly_pay << "\n"
+		<< " payment_mode: " << payment_mode_descriptor(payment_mode_) << "\n"
 		<< " create_time: " << timepoint_to_string(create_time);
 
 	return ss.str();
@@ -23,20 +35,4 @@ std::string salary_employee::timepoint_to_string(std::chrono::system_clock::time
 	char sztime[80] = { 0 };
 	strftime(sztime, sizeof(sztime), "%Y-%m-%d %X", &tm);
 	return sztime;
-}
-
-bool salary_employee::pay(std::chrono::system_clock::time_point pay_day)
-{
-	if (emp_type == employee_type::MONTHLY_WORKER)
-	{
-		return pay_monthly(pay_day);
-	}
-
-	return false;
-}
-
-bool salary_employee::pay_monthly(std::chrono::system_clock::time_point pay_day)
-{
-	
-	return false;
 }

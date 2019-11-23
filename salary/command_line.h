@@ -2,6 +2,7 @@
 
 #include <string>
 #include <vector>
+#include "employee.h"
 
 enum class Command
 {
@@ -17,14 +18,17 @@ enum class Command
 	kServiceCharge,
 	kChgEmp,
 	kChgEmpName,
+	kPay,
 };
 
 enum class EmployeeProperties
 {
 	kUnknown = 0,
-	kName = 1,
-	kAddress = 2,
-	EmployeeProperties_MAX = kAddress,
+	kName,
+	kAddress,
+	kMonthlyPay,
+	kPaymentMode,
+	EmployeeProperties_MAX = kPaymentMode,
 };
 
 inline EmployeeProperties& operator++(EmployeeProperties& p)
@@ -55,7 +59,10 @@ private:
 	bool exec_sales_receipt() const;
 	bool exec_service_charge() const;
 	bool exec_chg_emp() const;
+	bool exec_pay() const;
 
-	bool exec_chg_emp_name() const;
+	void get_changed_name(salary_employee& emp) const;
 	bool exec_chg_emp_address() const;
+	void get_changed_monthly_pay(salary_employee& emp) const;
+	void get_changed_payment_mode(salary_employee& emp) const;
 };
