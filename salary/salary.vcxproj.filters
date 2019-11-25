@@ -60,4 +60,9 @@
       <Filter>db</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\x64\Debug\salary.db">
+      <Filter>db</Filter>
+    </None>
+  </ItemGroup>
 </Project>

@@ -129,7 +129,7 @@ bool command_line::exec_add() const
 		cin >> type;
 		if (IsValidEmployeeType(static_cast<employee_type>(type)))
 		{
-			emp.emp_type = static_cast<employee_type>(type);
+			emp.employee_type_ = static_cast<employee_type>(type);
 			break;
 		}
 		else
@@ -239,7 +239,7 @@ bool command_line::exec_pay() const
 	{
 		if (date_is_month_last_work_day(t))
 		{
-			if (emp.emp_type == employee_type::MONTHLY_WORKER)
+			if (emp.employee_type_ == employee_type::MONTHLY_WORKER)
 			{
 				cout << "pay monthly employe, id: " << emp.id
 					<< ", name: " << emp.name

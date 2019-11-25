@@ -10,12 +10,16 @@
 #include <sstream>
 #include <vector>
 #include <string>
+#include <filesystem>
 #include "command_line.h"
 
 using namespace std;
 
 int main()
 {
+	auto filename = filesystem::current_path() / "salary.db";
+	salary_db::instance().open(filename.string());
+
 	command_line cmd_line;
 	cout << "=== Welcome to employee system. ===" << endl;
 	cout << endl;

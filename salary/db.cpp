@@ -1,7 +1,71 @@
 #include "db.h"
 
 #include <iostream>
+#include <filesystem>
+#include <fstream>
+#include <sstream>
+#include <vector>
+
+
 using namespace std;
+namespace fs = std::filesystem;
+
+bool salary_db::open(const std::string& filename)
+{
+	if (!fs::exists(filename))
+	{
+		return false;
+	}
+
+	if (!fs::is_regular_file(filename))
+	{
+		return false;
+	}
+
+	ifstream ifs(filename);
+	if (!ifs.is_open())
+	{
+		return false;
+	}
+
+	bool begin_employee = false;
+	string line;
+	while (getline(ifs, line))
+	{
+		if (begin_employee)
+		{
+			stringstream ss(line);
+			vector<string> values;
+			string value;
+			while (getline(ss, value, ';'))
+			{
+				values.push_back(value);
+			}
+
+			salary_employee se;
+			if (!se.parse(values))
+			{
+				return false;
+			}
+			
+			salary_db::instance().add_employee(se);
+
+			continue;
+		}
+		else
+		{
+			line.erase(remove_if(line.begin(), line.end(), ::isspace), line.end());
+			if (line == "[employee]")
+			{
+				begin_employee = true;
+				continue;
+			}
+		}
+
+	}
+
+	return true;
+}
 
 bool salary_db::add_employee(const salary_employee& emp)
 {
@@ -15,7 +79,7 @@ bool salary_db::add_employee(const salary_employee& emp)
 	if (emp.id < 0
 		|| emp.name.empty()
 		|| emp.address.empty()
-		|| emp.emp_type == employee_type::UNSPECIFIED)
+		|| emp.employee_type_ == employee_type::UNSPECIFIED)
 	{
 		cout << "paramaters invalid" << endl;
 		return false;
@@ -25,13 +89,13 @@ bool salary_db::add_employee(const salary_employee& emp)
 	return true;
 }
 
-bool salary_db::add_employee(int id, const std::string& name, const std::string& address, employee_type emp_type)
+bool salary_db::add_employee(int id, const std::string& name, const std::string& address, employee_type employee_type_)
 {
 	salary_employee emp;
 	emp.id = id;
 	emp.name = name;
 	emp.address = address;
-	emp.emp_type = emp_type;
+	emp.employee_type_ = employee_type_;
 	emp.create_time = chrono::system_clock::now();
 	return add_employee(emp);
 }
@@ -102,7 +166,7 @@ bool salary_db::add_time_card(const employee_time_card& time_card)
 	auto it = employees_.find(time_card.employee_id);
 	if (it != employees_.end())
 	{
-		if (it->second.emp_type != employee_type::HOURLY_WORKER)
+		if (it->second.employee_type_ != employee_type::HOURLY_WORKER)
 		{
 			cout << "worker type is not hourly worker, id: " << time_card.employee_id << endl;
 			return false;
@@ -133,7 +197,7 @@ bool salary_db::add_sales_receipt(const sales_receipt& sr)
 	}
 	else
 	{
-		if (it->second.emp_type == employee_type::COMMISSIONED_WORKER)
+		if (it->second.employee_type_ == employee_type::COMMISSIONED_WORKER)
 		{
 			sales_receipts_.push_back(sr);
 			return true;

@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <gtest/gtest.h>
+#include <filesystem>
 
 TEST(AddEmp, SucceedAddOneEmp)
 {
@@ -47,12 +48,22 @@ TEST(ChangeEmp, ChangeName)
 	auto& db = salary_db::instance();
 	db.clear();
 
-	salary_employee se{ 0, "lilei", "addr", employee_type::MONTHLY_WORKER };
+	salary_employee se;
+	se.id = 0;
+	se.name = "lilei";
+	se.address = "addr";
+	se.emp_type = employee_type::MONTHLY_WORKER;
+
 	EXPECT_TRUE(db.add_employee(se));
 	se.name = "cxx";
 	EXPECT_TRUE(db.change_employee(se));
 
-	salary_employee se_not_exist{ 1, "lilei", "addr", employee_type::MONTHLY_WORKER };
+	salary_employee se_not_exist;
+	se_not_exist.id = 1;
+	se_not_exist.name = "lilei";
+	se_not_exist.address = "addr";
+	se_not_exist.emp_type = employee_type::MONTHLY_WORKER;
+
 	EXPECT_FALSE(db.change_employee(se_not_exist));
 }
 
@@ -259,3 +270,23 @@ TEST(ServiceCharge, ToNotExistMember)
 	EXPECT_FALSE(db.service_charge(1, amount));
 	EXPECT_EQ(-1, db.get_service_amount(1));
 }
+
+TEST(Open, NotExistFile)
+{
+	auto& db = salary_db::instance();
+
+	string filename = "c:\a.db";
+	EXPECT_FALSE(db.open(filename));
+
+	auto a_folder = std::filesystem::temp_directory_path();
+
+	EXPECT_FALSE(db.open(a_folder.string()));
+}
+
+//TEST(Open, ExistFile)
+//{
+//	auto& db = salary_db::instance();
+//
+//	string filename = "c:\a.db";
+//	EXPECT_FALSE(db.open(filename));
+//}

@@ -86,11 +86,13 @@ public:
 
 	std::string timepoint_to_string(std::chrono::system_clock::time_point tp) const;
 
+	bool parse(const std::vector<std::string>& values);
+
 public:
 	int id;
 	std::string name;
 	std::string address;
-	employee_type emp_type;
+	employee_type employee_type_;
 	int society_dues;
 	int service_amount;
 	int monthly_pay;
