@@ -18,6 +18,7 @@ map<string, Command> commands_dict = {
 	{ "servicecharge", Command::kServiceCharge},
 	{ "chgemp", Command::kChgEmp},
 	{ "pay", Command::kPay},
+	{ "save", Command::kSave},
 };
 
 map<EmployeeProperties, string> properties_descriptor
@@ -70,6 +71,8 @@ bool command_line::exec_command(Command cmd) const
 		return exec_chg_emp();
 	case Command::kPay:
 		return exec_pay();
+	case Command::kSave:
+		return exec_save();
 	default:
 		assert(0);
 		break;
@@ -250,6 +253,11 @@ bool command_line::exec_pay() const
 	}
 
 	return true;
+}
+
+bool command_line::exec_save() const
+{
+	return salary_db::instance().save();
 }
 
 bool command_line::exec_chg_emp() const

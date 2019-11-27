@@ -15,6 +15,7 @@ public:
 	}
 
 	bool open(const std::string& filename);
+	bool save();
 
 	bool add_employee(int id, const std::string& name, const std::string& address, employee_type emp_type);
 	bool add_employee(const salary_employee& emp);
@@ -40,4 +41,6 @@ private:
 	std::vector<sales_receipt> sales_receipts_;
 	std::map<int, int> society_members_;
 	std::map<int, int> society_members_2_;
+
+	std::string filename_;
 };

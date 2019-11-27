@@ -67,3 +67,15 @@ bool date_is_month_last_work_day(time_t t)
 
 	return false;
 }
+
+std::string time_point_calendar(std::chrono::system_clock::time_point tp)
+{
+	time_t t = std::chrono::system_clock::to_time_t(tp);
+	tm tm_t;
+	localtime_s(&tm_t, &t);
+
+	char date[100] = { 0 };
+	strftime(date, sizeof(date), "%Y-%m-%d %X", &tm_t);
+
+	return date;
+}

@@ -19,6 +19,7 @@ enum class Command
 	kChgEmp,
 	kChgEmpName,
 	kPay,
+	kSave,
 };
 
 enum class EmployeeProperties
@@ -60,6 +61,7 @@ private:
 	bool exec_service_charge() const;
 	bool exec_chg_emp() const;
 	bool exec_pay() const;
+	bool exec_save() const;
 
 	void get_changed_name(salary_employee& emp) const;
 	bool exec_chg_emp_address() const;

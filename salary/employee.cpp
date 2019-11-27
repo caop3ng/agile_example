@@ -1,6 +1,8 @@
 #include "salary.h"
 #include "employee.h"
 
+using namespace std;
+
 salary_employee::salary_employee()
 	: id(0),
 	employee_type_(employee_type::UNSPECIFIED),
@@ -76,4 +78,20 @@ bool salary_employee::parse(const std::vector<std::string>& v)
 	}
 
 	return true;
+}
+
+std::string salary_employee::serialize()
+{
+	stringstream ss;
+	ss << id
+		<< ";" << name
+		<< ";" << address
+		<< ";" << std::to_string(static_cast<int>(employee_type_))
+		<< ";" << society_dues
+		<< ";" << service_amount
+		<< ";" << monthly_pay
+		<< ";" << std::to_string(static_cast<int>(payment_mode_))
+		<< ";" << time_point_calendar(create_time);
+
+	return ss.str();
 }

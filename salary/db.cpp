@@ -61,7 +61,28 @@ bool salary_db::open(const std::string& filename)
 				continue;
 			}
 		}
+	}
 
+	filename_ = filename;
+
+	return true;
+}
+
+bool salary_db::save()
+{
+	try
+	{
+		ofstream ofs(filename_);
+		ofs << "[employee]" << '\n';
+
+		for (auto& e : employees_)
+		{
+			ofs << e.second.serialize() << '\n';
+		}
+	}
+	catch (...)
+	{
+		return false;
 	}
 
 	return true;
@@ -73,6 +94,7 @@ bool salary_db::add_employee(const salary_employee& emp)
 	if (it != employees_.end())
 	{
 		cout << "employee has exist" << endl;
+		assert(0);
 		return false;
 	}
 

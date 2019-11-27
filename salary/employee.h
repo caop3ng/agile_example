@@ -87,6 +87,7 @@ public:
 	std::string timepoint_to_string(std::chrono::system_clock::time_point tp) const;
 
 	bool parse(const std::vector<std::string>& values);
+	std::string serialize();
 
 public:
 	int id;
