@@ -6,6 +6,7 @@
 #include "util.cpp"
 #include "employee.cpp"
 #include "db.cpp"
+#include "db_struct.cpp"
 
 #include "util_test.h"
 #include "db_test.h"

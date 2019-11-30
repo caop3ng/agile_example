@@ -98,5 +98,6 @@ public:
 	int service_amount;
 	int monthly_pay;
 	payment_mode payment_mode_;
+	int hourly_pay_;
 	std::chrono::system_clock::time_point create_time;
 };

@@ -9,7 +9,8 @@ salary_employee::salary_employee()
 	society_dues(0),
 	service_amount(0),
 	monthly_pay(0),
-	payment_mode_(payment_mode::UNSPECIFIED)
+	payment_mode_(payment_mode::UNSPECIFIED),
+	hourly_pay_(0)
 {
 }
 
@@ -24,6 +25,7 @@ std::string salary_employee::to_string() const
 		<< " service_amount: " << service_amount << "\n"
 		<< " monthly_pay: " << monthly_pay << "\n"
 		<< " payment_mode: " << payment_mode_descriptor(payment_mode_) << "\n"
+		<< " hourly_pay: " << hourly_pay_ << "\n"
 		<< " create_time: " << timepoint_to_string(create_time);
 
 	return ss.str();
@@ -56,9 +58,10 @@ bool salary_employee::parse(const std::vector<std::string>& v)
 		service_amount = atoi(v[5].c_str());
 		monthly_pay = atoi(v[6].c_str());
 		payment_mode_ = static_cast<payment_mode>(atoi(v[7].c_str()));
+		hourly_pay_ = atoi(v[8].c_str());
 		
 		tm tm_t;
-		int ret = sscanf_s(v[8].c_str(), "%d-%d-%d %d:%d:%d", &tm_t.tm_year, &tm_t.tm_mon, &tm_t.tm_mday,
+		int ret = sscanf_s(v[9].c_str(), "%d-%d-%d %d:%d:%d", &tm_t.tm_year, &tm_t.tm_mon, &tm_t.tm_mday,
 			&tm_t.tm_hour, &tm_t.tm_min, &tm_t.tm_sec);
 
 		if (ret != 6)
@@ -91,6 +94,7 @@ std::string salary_employee::serialize()
 		<< ";" << service_amount
 		<< ";" << monthly_pay
 		<< ";" << std::to_string(static_cast<int>(payment_mode_))
+		<< ";" << hourly_pay_
 		<< ";" << time_point_calendar(create_time);
 
 	return ss.str();

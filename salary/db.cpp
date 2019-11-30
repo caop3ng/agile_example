@@ -28,10 +28,27 @@ bool salary_db::open(const std::string& filename)
 		return false;
 	}
 
+	// [employee] before [time_card]
 	bool begin_employee = false;
+	bool begin_time_card = false;
 	string line;
 	while (getline(ifs, line))
 	{
+		string tmp_line = line;
+		tmp_line.erase(remove_if(tmp_line.begin(), tmp_line.end(), ::isspace), tmp_line.end());
+
+		if (tmp_line == "[employee]")
+		{
+			begin_employee = true;
+			continue;
+		}
+		else if (tmp_line == "[time_card]")
+		{
+			begin_employee = false;
+			begin_time_card = true;
+			continue;
+		}
+
 		if (begin_employee)
 		{
 			stringstream ss(line);
@@ -42,24 +59,37 @@ bool salary_db::open(const std::string& filename)
 				values.push_back(value);
 			}
 
-			salary_employee se;
-			if (!se.parse(values))
+			if (!values.empty())
 			{
-				return false;
+				salary_employee se;
+				if (!se.parse(values))
+				{
+					assert(0);
+					return false;
+				}
+
+				salary_db::instance().add_employee(se);
 			}
-			
-			salary_db::instance().add_employee(se);
 
 			continue;
 		}
-		else
+		else if (begin_time_card)
 		{
-			line.erase(remove_if(line.begin(), line.end(), ::isspace), line.end());
-			if (line == "[employee]")
+			stringstream ss(line);
+			vector<string> values;
+			string value;
+			while (getline(ss, value, ';'))
 			{
-				begin_employee = true;
-				continue;
+				values.push_back(value);
 			}
+
+			employee_time_card etc;
+			if (!etc.parse(values))
+			{
+				return false;
+			}
+
+			salary_db::instance().add_time_card(etc);
 		}
 	}
 
@@ -78,6 +108,13 @@ bool salary_db::save()
 		for (auto& e : employees_)
 		{
 			ofs << e.second.serialize() << '\n';
+		}
+
+		ofs << "[time_card]" << '\n';
+
+		for (auto& c : time_cards_)
+		{
+			ofs << c.serialize() << '\n';
 		}
 	}
 	catch (...)
@@ -200,6 +237,31 @@ bool salary_db::add_time_card(const employee_time_card& time_card)
 
 	cout << "failed to add time_card, user not found, id: " << time_card.employee_id << endl;
 	return false;
+}
+
+std::vector<employee_time_card> salary_db::get_all_time_card() const
+{
+	return time_cards_;
+}
+
+std::vector<employee_time_card> salary_db::get_employee_time_card(int employee_id) const
+{
+	if (!has_employee(employee_id))
+	{
+		assert(0);
+		return vector<employee_time_card>();
+	}
+
+	vector<employee_time_card> v;
+	for (auto& etc : time_cards_)
+	{
+		if (etc.employee_id == employee_id)
+		{
+			v.push_back(etc);
+		}
+	}
+
+	return v;
 }
 
 bool salary_db::add_sales_receipt(const sales_receipt& sr)

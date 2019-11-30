@@ -72,7 +72,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);E:\3rdparty\boost_1_71_0;</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);E:\third_party\boost_1_71_0;</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
@@ -99,7 +99,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>E:\3rdparty\boost_1_71_0\stage\lib;</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>E:\third_party\boost_1_71_0\stage\lib;</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -158,6 +158,7 @@
   <ItemGroup>
     <ClCompile Include="command_line.cpp" />
     <ClCompile Include="db.cpp" />
+    <ClCompile Include="db_struct.cpp" />
     <ClCompile Include="employee.cpp" />
     <ClCompile Include="salary.cpp" />
     <ClCompile Include="util.cpp" />

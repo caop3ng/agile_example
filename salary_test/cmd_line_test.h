@@ -32,6 +32,8 @@ TEST(CmdLine, ParseUnExistCommand)
 TEST(ExecuteCmd, AllNormal)
 {
 	auto& db = salary_db::instance();
+	db.clear();
+
 	db.add_employee(0, "ll", "beijing", employee_type::HOURLY_WORKER);
 	db.add_employee(1, "xiaoming", "shanghai", employee_type::COMMISSIONED_WORKER);
 	db.add_employee(2, "zhangsan", "guangzhou", employee_type::MONTHLY_WORKER);

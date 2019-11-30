@@ -39,6 +39,9 @@
     <ClCompile Include="employee.cpp">
       <Filter>db</Filter>
     </ClCompile>
+    <ClCompile Include="db_struct.cpp">
+      <Filter>db</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="db.h">

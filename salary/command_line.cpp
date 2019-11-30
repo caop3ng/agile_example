@@ -27,6 +27,7 @@ map<EmployeeProperties, string> properties_descriptor
 	{ EmployeeProperties::kAddress, "address" },
 	{ EmployeeProperties::kMonthlyPay, "montly pay" },
 	{ EmployeeProperties::kPaymentMode, "payment mode" },
+	{ EmployeeProperties::kHourlyPay, "hourly pay" },
 };
 
 command_line::command_line()
@@ -94,7 +95,8 @@ bool command_line::exec_help() const
 
 bool command_line::exec_list() const
 {
-	auto employees = salary_db::instance().get_all_employees();
+	auto& db = salary_db::instance();
+	auto employees = db.get_all_employees();
 
 	if (employees.empty())
 	{
@@ -106,6 +108,12 @@ bool command_line::exec_list() const
 	for (const auto& e : employees)
 	{
 		cout << e.to_string() << endl;
+	}
+
+	cout << "Time Card: " << endl;
+	for (const auto& etc : db.get_all_time_card())
+	{
+		cout << etc.to_string() << endl;
 	}
 
 	return true;
@@ -177,7 +185,9 @@ bool command_line::exec_time_card() const
 	cout << "hours: ";
 	cin >> etc.hours;
 
-	etc.date_time = chrono::system_clock::now();
+	etc.work_date = chrono::system_clock::now();
+
+	etc.paid = false;
 
 	bool ret = salary_db::instance().add_time_card(etc);
 	if (!ret)
@@ -231,11 +241,11 @@ bool command_line::exec_pay() const
 {
 	auto& db = salary_db::instance();
 
-	tm tm_t = { 0 };
-	tm_t.tm_year = 2019 - 1900;
-	tm_t.tm_mon = 10;
-	tm_t.tm_mday = 29;
-	auto t = mktime(&tm_t);
+	tm tmp = { 0 };
+	tmp.tm_year = 2019 - 1900;
+	tmp.tm_mon = 10;
+	tmp.tm_mday = 29;
+	auto t = mktime(&tmp);
 
 	auto all_employees = db.get_all_employees();
 	for (auto& emp : all_employees)
@@ -244,11 +254,39 @@ bool command_line::exec_pay() const
 		{
 			if (emp.employee_type_ == employee_type::MONTHLY_WORKER)
 			{
-				cout << "pay monthly employe, id: " << emp.id
+				cout << "pay monthly employee, id: " << emp.id
 					<< ", name: " << emp.name
 					<< ", payment mode: " << payment_mode_descriptor(emp.payment_mode_)
 					<< ", monthly pay: " << emp.monthly_pay << endl;
 			}
+		}
+
+		if (employee_time_card::payday(t))
+		{
+			auto cards = db.get_employee_time_card(emp.id);
+			cout << "pay hourly employee, id: " << emp.id << endl;
+			double total_pays = 0;
+			for (auto& c : cards)
+			{
+				if (!c.paid)
+				{
+					double pays = 0;
+					if (c.hours > 8)
+					{
+						pays = emp.hourly_pay_ * (8 + (c.hours - 8) * 1.5);
+					}
+					else
+					{
+						pays = emp.hourly_pay_ * c.hours;
+					}
+
+					cout << "pay time card: " << c.to_string() << " pays: " << pays << endl;
+
+					total_pays += pays;
+				}
+			}
+
+			cout << "total pays: " << total_pays << endl;
 		}
 	}
 
@@ -323,6 +361,9 @@ bool command_line::exec_chg_emp() const
 	case EmployeeProperties::kPaymentMode:
 		get_changed_payment_mode(emp);
 		break;
+	case EmployeeProperties::kHourlyPay:
+		get_changed_hourly_pay(emp);
+		break;
 	default:
 		assert(0);
 		return false;
@@ -385,4 +426,13 @@ void command_line::get_changed_payment_mode(salary_employee& emp) const
 	}
 
 	emp.payment_mode_ = static_cast<payment_mode>(new_mode);
+}
+
+void command_line::get_changed_hourly_pay(salary_employee& emp) const
+{
+	int hourly_pay;
+	cout << "hourly pay: ";
+	cin >> hourly_pay;
+
+	emp.hourly_pay_ = hourly_pay;
 }

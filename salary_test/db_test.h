@@ -24,7 +24,8 @@ TEST(AddEmp, AddExistedOneEmp)
 	auto& db = salary_db::instance();
 	db.clear();
 	EXPECT_TRUE(db.add_employee(0, "lilei", "addr", employee_type::MONTHLY_WORKER));
-	EXPECT_FALSE(db.add_employee(0, "aa", "addr", employee_type::MONTHLY_WORKER));
+	EXPECT_DEATH(db.add_employee(0, "aa", "addr", employee_type::MONTHLY_WORKER),
+		"Assertion failed");
 }
 
 TEST(DeleteEmp, DeleteUnexistEmp)
@@ -52,7 +53,7 @@ TEST(ChangeEmp, ChangeName)
 	se.id = 0;
 	se.name = "lilei";
 	se.address = "addr";
-	se.emp_type = employee_type::MONTHLY_WORKER;
+	se.employee_type_ = employee_type::MONTHLY_WORKER;
 
 	EXPECT_TRUE(db.add_employee(se));
 	se.name = "cxx";
@@ -62,7 +63,7 @@ TEST(ChangeEmp, ChangeName)
 	se_not_exist.id = 1;
 	se_not_exist.name = "lilei";
 	se_not_exist.address = "addr";
-	se_not_exist.emp_type = employee_type::MONTHLY_WORKER;
+	se_not_exist.employee_type_ = employee_type::MONTHLY_WORKER;
 
 	EXPECT_FALSE(db.change_employee(se_not_exist));
 }
@@ -73,7 +74,7 @@ TEST(AddTimeCard, AddOneTimeCardToUnexistEmp)
 	db.clear();
 	employee_time_card etc;
 	etc.employee_id = 0;
-	etc.date_time = chrono::system_clock::now();
+	etc.work_date = chrono::system_clock::now();
 	etc.hours = 5;
 	EXPECT_FALSE(db.add_time_card(etc));
 
@@ -86,7 +87,7 @@ TEST(AddTimeCard, AddOneTimeCardToExistEmp)
 	db.add_employee(0, "lilei", "addr", employee_type::HOURLY_WORKER);
 	employee_time_card etc;
 	etc.employee_id = 0;
-	etc.date_time = chrono::system_clock::now();
+	etc.work_date = chrono::system_clock::now();
 	etc.hours = 5;
 	EXPECT_TRUE(db.add_time_card(etc));
 }
@@ -98,13 +99,13 @@ TEST(AddTimeCard, AddTwoTimeCardToExistEmp)
 	db.add_employee(0, "lilei", "addr", employee_type::HOURLY_WORKER);
 	employee_time_card etc;
 	etc.employee_id = 0;
-	etc.date_time = chrono::system_clock::now();
+	etc.work_date = chrono::system_clock::now();
 	etc.hours = 5;
 	EXPECT_TRUE(db.add_time_card(etc));
 
 	employee_time_card etc2;
 	etc2.employee_id = 0;
-	etc2.date_time = chrono::system_clock::now();
+	etc2.work_date = chrono::system_clock::now();
 	etc2.hours = 8;
 	EXPECT_TRUE(db.add_time_card(etc2));
 }
@@ -116,7 +117,7 @@ TEST(AddTimeCard, AddTimeCardHourInvalid)
 	db.add_employee(0, "lilei", "addr", employee_type::HOURLY_WORKER);
 	employee_time_card etc;
 	etc.employee_id = 0;
-	etc.date_time = chrono::system_clock::now();
+	etc.work_date = chrono::system_clock::now();
 	etc.hours = 0;
 
 	EXPECT_FALSE(db.add_time_card(etc));
@@ -129,7 +130,7 @@ TEST(AddTimeCard, AddTimeCardWorkerTypeInvalid)
 	db.add_employee(0, "lilei", "addr", employee_type::MONTHLY_WORKER);
 	employee_time_card etc;
 	etc.employee_id = 0;
-	etc.date_time = chrono::system_clock::now();
+	etc.work_date = chrono::system_clock::now();
 	etc.hours = 5;
 	EXPECT_FALSE(db.add_time_card(etc));
 }
@@ -178,7 +179,7 @@ TEST(AddSalesReceipt, AddSalesReceiptToWrongUser)
 //
 //	sales_receipt sr;
 //	sr.employee_id = 0;
-//	sr.date_time = chrono::system_clock::now();
+//	sr.work_date = chrono::system_clock::now();
 //	sr.amount = 1000;
 //	EXPECT_FALSE(db.add_sales_receipt(sr));
 //}

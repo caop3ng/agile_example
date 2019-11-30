@@ -29,7 +29,8 @@ enum class EmployeeProperties
 	kAddress,
 	kMonthlyPay,
 	kPaymentMode,
-	EmployeeProperties_MAX = kPaymentMode,
+	kHourlyPay,
+	EmployeeProperties_MAX = kHourlyPay,
 };
 
 inline EmployeeProperties& operator++(EmployeeProperties& p)
@@ -67,4 +68,5 @@ private:
 	bool exec_chg_emp_address() const;
 	void get_changed_monthly_pay(salary_employee& emp) const;
 	void get_changed_payment_mode(salary_employee& emp) const;
+	void get_changed_hourly_pay(salary_employee& emp) const;
 };

@@ -25,6 +25,8 @@ public:
 	bool change_employee(const salary_employee& emp);
 	bool delete_employee(int id);
 	bool add_time_card(const employee_time_card& time_card);
+	std::vector<employee_time_card> get_all_time_card() const;
+	std::vector<employee_time_card> get_employee_time_card(int employee_id) const;
 	bool add_sales_receipt(const sales_receipt& sr);
 	bool add_member(int employee_id, int member_id, int dues);
 	int get_society_dues(int member_id) const;
