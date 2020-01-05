@@ -72,7 +72,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);E:\third_party\googletest-release-1.10.0\googletest\include;..\payroll;E:\third_party\boost_1_71_0</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);E:\third_party\googletest-release-1.10.0\googletest\include;..\payroll\src;E:\third_party\boost_1_71_0</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
@@ -156,7 +156,40 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\payroll\src\AddCommissionedEmployee.cpp" />
+    <ClCompile Include="..\payroll\src\AddEmployeeTransaction.cpp" />
+    <ClCompile Include="..\payroll\src\AddHourlyEmployee.cpp" />
+    <ClCompile Include="..\payroll\src\AddSalariedEmployee.cpp" />
+    <ClCompile Include="..\payroll\src\BiweeklySchedule.cpp" />
+    <ClCompile Include="..\payroll\src\CommissionedClassification.cpp" />
+    <ClCompile Include="..\payroll\src\DeleteEmployeeTransaction.cpp" />
+    <ClCompile Include="..\payroll\src\DirectMethod.cpp" />
+    <ClCompile Include="..\payroll\src\Employee.cpp" />
+    <ClCompile Include="..\payroll\src\HoldMethod.cpp" />
+    <ClCompile Include="..\payroll\src\HourlyClassification.cpp" />
+    <ClCompile Include="..\payroll\src\MailMethod.cpp" />
+    <ClCompile Include="..\payroll\src\MonthlySchedule.cpp" />
+    <ClCompile Include="..\payroll\src\PaymentClassification.cpp" />
+    <ClCompile Include="..\payroll\src\PaymentMethod.cpp" />
+    <ClCompile Include="..\payroll\src\PaymentSchedule.cpp" />
+    <ClCompile Include="..\payroll\src\PayrollDatabase.cpp" />
+    <ClCompile Include="..\payroll\src\SalariedClassification.cpp" />
+    <ClCompile Include="..\payroll\src\SalesReceipt.cpp" />
+    <ClCompile Include="..\payroll\src\SalesReceiptTransaction.cpp" />
+    <ClCompile Include="..\payroll\src\TimeCard.cpp" />
+    <ClCompile Include="..\payroll\src\TimeCardTransaction.cpp" />
+    <ClCompile Include="..\payroll\src\WeeklySchedule.cpp" />
+    <ClCompile Include="..\payroll\util\Date.cpp" />
+    <ClCompile Include="AddCommissionedEmployee_test.cpp" />
+    <ClCompile Include="AddHourlyEmployee_test.cpp" />
+    <ClCompile Include="AddSalariedEmployee_test.cpp" />
+    <ClCompile Include="DeleteEmployeeTest.cpp" />
     <ClCompile Include="payroll_test.cpp" />
+    <ClCompile Include="SalesReceiptTransactionTest.cpp" />
+    <ClCompile Include="TimeCardTransactionTest.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="all_hearder.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

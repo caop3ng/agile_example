@@ -18,6 +18,60 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\SalesReceipt.cpp" />
+    <ClCompile Include="src\SalesReceiptTransaction.cpp" />
+    <ClCompile Include="util\Date.cpp" />
+    <ClCompile Include="src\DeleteEmployeeTransaction.cpp" />
+    <ClCompile Include="src\AddCommissionedEmployee.cpp" />
+    <ClCompile Include="src\AddHourlyEmployee.cpp" />
+    <ClCompile Include="src\DirectMethod.cpp" />
+    <ClCompile Include="src\HoldMethod.cpp" />
+    <ClCompile Include="src\MailMethod.cpp" />
+    <ClCompile Include="src\PaymentMethod.cpp" />
+    <ClCompile Include="src\CommissionedClassification.cpp" />
+    <ClCompile Include="src\SalariedClassification.cpp" />
+    <ClCompile Include="src\AddEmployeeTransaction.cpp" />
+    <ClCompile Include="src\AddSalariedEmployee.cpp" />
+    <ClCompile Include="src\BiweeklySchedule.cpp" />
+    <ClCompile Include="src\Employee.cpp" />
+    <ClCompile Include="src\HourlyClassification.cpp" />
+    <ClCompile Include="src\MonthlySchedule.cpp" />
+    <ClCompile Include="src\PaymentClassification.cpp" />
+    <ClCompile Include="src\PaymentSchedule.cpp" />
+    <ClCompile Include="src\payroll.cpp" />
+    <ClCompile Include="src\PayrollDatabase.cpp" />
+    <ClCompile Include="src\WeeklySchedule.cpp" />
+    <ClCompile Include="src\TimeCard.cpp" />
+    <ClCompile Include="src\TimeCardTransaction.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\SalesReceipt.h" />
+    <ClInclude Include="src\SalesReceiptTransaction.h" />
+    <ClInclude Include="util\Date.h" />
+    <ClInclude Include="src\DeleteEmployeeTransaction.h" />
+    <ClInclude Include="src\AddCommissionedEmployee.h" />
+    <ClInclude Include="src\AddHourlyEmployee.h" />
+    <ClInclude Include="src\DirectMethod.h" />
+    <ClInclude Include="src\HoldMethod.h" />
+    <ClInclude Include="src\MailMethod.h" />
+    <ClInclude Include="src\PaymentMethod.h" />
+    <ClInclude Include="src\CommissionedClassification.h" />
+    <ClInclude Include="src\SalariedClassification.h" />
+    <ClInclude Include="src\AddEmployeeTransaction.h" />
+    <ClInclude Include="src\AddSalariedEmployee.h" />
+    <ClInclude Include="src\BiweeklySchedule.h" />
+    <ClInclude Include="src\Employee.h" />
+    <ClInclude Include="src\HourlyClassification.h" />
+    <ClInclude Include="src\MonthlySchedule.h" />
+    <ClInclude Include="src\PaymentClassification.h" />
+    <ClInclude Include="src\PaymentSchedule.h" />
+    <ClInclude Include="src\PayrollDatabase.h" />
+    <ClInclude Include="src\Transaction.h" />
+    <ClInclude Include="src\WeeklySchedule.h" />
+    <ClInclude Include="src\TimeCard.h" />
+    <ClInclude Include="src\TimeCardTransaction.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <ProjectGuid>{01C63C51-68D4-47F6-86D2-BA11055B704D}</ProjectGuid>
@@ -151,9 +205,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="payroll.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

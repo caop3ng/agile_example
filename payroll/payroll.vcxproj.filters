@@ -1,22 +1,156 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
+    <ClCompile Include="src\Employee.cpp" />
+    <ClCompile Include="src\payroll.cpp" />
+    <ClCompile Include="src\PayrollDatabase.cpp" />
+    <ClCompile Include="src\CommissionedClassification.cpp">
+      <Filter>classification</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PaymentClassification.cpp">
+      <Filter>classification</Filter>
+    </ClCompile>
+    <ClCompile Include="src\HourlyClassification.cpp">
+      <Filter>classification</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SalariedClassification.cpp">
+      <Filter>classification</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BiweeklySchedule.cpp">
+      <Filter>schedule</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MonthlySchedule.cpp">
+      <Filter>schedule</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PaymentSchedule.cpp">
+      <Filter>schedule</Filter>
+    </ClCompile>
+    <ClCompile Include="src\WeeklySchedule.cpp">
+      <Filter>schedule</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AddEmployeeTransaction.cpp">
+      <Filter>transaction</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AddSalariedEmployee.cpp">
+      <Filter>transaction</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DirectMethod.cpp">
+      <Filter>method</Filter>
+    </ClCompile>
+    <ClCompile Include="src\HoldMethod.cpp">
+      <Filter>method</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MailMethod.cpp">
+      <Filter>method</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PaymentMethod.cpp">
+      <Filter>method</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AddHourlyEmployee.cpp">
+      <Filter>transaction</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AddCommissionedEmployee.cpp">
+      <Filter>transaction</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DeleteEmployeeTransaction.cpp">
+      <Filter>transaction</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TimeCard.cpp" />
+    <ClCompile Include="src\TimeCardTransaction.cpp">
+      <Filter>transaction</Filter>
+    </ClCompile>
+    <ClCompile Include="util\Date.cpp">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SalesReceipt.cpp" />
+    <ClCompile Include="src\SalesReceiptTransaction.cpp">
+      <Filter>transaction</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="payroll.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+    <ClInclude Include="src\Employee.h" />
+    <ClInclude Include="src\PayrollDatabase.h" />
+    <ClInclude Include="src\CommissionedClassification.h">
+      <Filter>classification</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PaymentClassification.h">
+      <Filter>classification</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HourlyClassification.h">
+      <Filter>classification</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SalariedClassification.h">
+      <Filter>classification</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BiweeklySchedule.h">
+      <Filter>schedule</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MonthlySchedule.h">
+      <Filter>schedule</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PaymentSchedule.h">
+      <Filter>schedule</Filter>
+    </ClInclude>
+    <ClInclude Include="src\WeeklySchedule.h">
+      <Filter>schedule</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AddEmployeeTransaction.h">
+      <Filter>transaction</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AddSalariedEmployee.h">
+      <Filter>transaction</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Transaction.h">
+      <Filter>transaction</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DirectMethod.h">
+      <Filter>method</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HoldMethod.h">
+      <Filter>method</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MailMethod.h">
+      <Filter>method</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PaymentMethod.h">
+      <Filter>method</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AddHourlyEmployee.h">
+      <Filter>transaction</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AddCommissionedEmployee.h">
+      <Filter>transaction</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DeleteEmployeeTransaction.h">
+      <Filter>transaction</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TimeCard.h" />
+    <ClInclude Include="src\TimeCardTransaction.h">
+      <Filter>transaction</Filter>
+    </ClInclude>
+    <ClInclude Include="util\Date.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SalesReceipt.h" />
+    <ClInclude Include="src\SalesReceiptTransaction.h">
+      <Filter>transaction</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="schedule">
+      <UniqueIdentifier>{d836fd5e-957c-4477-bd2d-abf16ec8515c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="transaction">
+      <UniqueIdentifier>{e253b729-1823-4566-a96b-f2db41de281e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="method">
+      <UniqueIdentifier>{e072b094-10d9-4e34-b0c8-aba33faf2047}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="classification">
+      <UniqueIdentifier>{fdb5007c-e8ec-4a8e-be2e-0396a8cd6d99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="util">
+      <UniqueIdentifier>{81d947db-7809-40dd-b7a6-4ced55c6de65}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

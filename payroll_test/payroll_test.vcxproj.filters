@@ -5,18 +5,111 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    <Filter Include="testfile">
+      <UniqueIdentifier>{6f4f0ffe-9a0d-4c42-ba7a-c47ca8e10b8b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="test">
+      <UniqueIdentifier>{bf09a4e2-6374-4441-8a8d-f5b773555f84}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="payroll_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\payroll\src\AddEmployeeTransaction.cpp">
+      <Filter>testfile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\payroll\src\AddSalariedEmployee.cpp">
+      <Filter>testfile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\payroll\src\BiweeklySchedule.cpp">
+      <Filter>testfile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\payroll\src\CommissionedClassification.cpp">
+      <Filter>testfile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\payroll\src\DirectMethod.cpp">
+      <Filter>testfile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\payroll\src\Employee.cpp">
+      <Filter>testfile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\payroll\src\HoldMethod.cpp">
+      <Filter>testfile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\payroll\src\HourlyClassification.cpp">
+      <Filter>testfile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\payroll\src\MailMethod.cpp">
+      <Filter>testfile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\payroll\src\MonthlySchedule.cpp">
+      <Filter>testfile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\payroll\src\PaymentClassification.cpp">
+      <Filter>testfile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\payroll\src\PaymentMethod.cpp">
+      <Filter>testfile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\payroll\src\PaymentSchedule.cpp">
+      <Filter>testfile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\payroll\src\PayrollDatabase.cpp">
+      <Filter>testfile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\payroll\src\SalariedClassification.cpp">
+      <Filter>testfile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\payroll\src\WeeklySchedule.cpp">
+      <Filter>testfile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\payroll\src\AddHourlyEmployee.cpp">
+      <Filter>testfile</Filter>
+    </ClCompile>
+    <ClCompile Include="AddSalariedEmployee_test.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="AddHourlyEmployee_test.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\payroll\src\AddCommissionedEmployee.cpp">
+      <Filter>testfile</Filter>
+    </ClCompile>
+    <ClCompile Include="AddCommissionedEmployee_test.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="DeleteEmployeeTest.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\payroll\src\DeleteEmployeeTransaction.cpp">
+      <Filter>testfile</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeCardTransactionTest.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\payroll\src\TimeCard.cpp">
+      <Filter>testfile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\payroll\src\TimeCardTransaction.cpp">
+      <Filter>testfile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\payroll\util\Date.cpp">
+      <Filter>testfile</Filter>
+    </ClCompile>
+    <ClCompile Include="SalesReceiptTransactionTest.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\payroll\src\SalesReceipt.cpp">
+      <Filter>testfile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\payroll\src\SalesReceiptTransaction.cpp">
+      <Filter>testfile</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="all_hearder.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
