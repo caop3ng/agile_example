@@ -121,6 +121,15 @@
     <ClCompile Include="AddServiceChargeTest.cpp">
       <Filter>test</Filter>
     </ClCompile>
+    <ClCompile Include="ChangeNameTransactionTest.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\payroll\src\ChangeEmployeeTransaction.cpp">
+      <Filter>testfile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\payroll\src\ChangeNameTransaction.cpp">
+      <Filter>testfile</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="all_hearder.h">

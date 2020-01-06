@@ -19,6 +19,7 @@ public:
   PaymentMethod* GetMethod() const;
   Affiliation* GetAffiliation() const;
 
+  void SetName(const std::string);
   void SetClassification(PaymentClassification*);
   void SetSchedule(PaymentSchedule*);
   void SetMethod(PaymentMethod*);

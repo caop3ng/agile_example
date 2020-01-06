@@ -33,6 +33,11 @@ Affiliation* Employee::GetAffiliation() const
   return itsAffiliation;
 }
 
+void Employee::SetName(const std::string name)
+{
+  itsName = name;
+}
+
 void Employee::SetClassification(PaymentClassification* pc)
 {
   itsClassification = pc;

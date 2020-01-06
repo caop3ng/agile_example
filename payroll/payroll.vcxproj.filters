@@ -72,6 +72,12 @@
     <ClCompile Include="src\ServiceChargeTransaction.cpp">
       <Filter>transaction</Filter>
     </ClCompile>
+    <ClCompile Include="src\ChangeEmployeeTransaction.cpp">
+      <Filter>transaction</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ChangeNameTransaction.cpp">
+      <Filter>transaction</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Employee.h" />
@@ -145,6 +151,12 @@
     <ClInclude Include="src\UnionAffiliation.h" />
     <ClInclude Include="src\ServiceCharge.h" />
     <ClInclude Include="src\ServiceChargeTransaction.h">
+      <Filter>transaction</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ChangeEmployeeTransaction.h">
+      <Filter>transaction</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ChangeNameTransaction.h">
       <Filter>transaction</Filter>
     </ClInclude>
   </ItemGroup>

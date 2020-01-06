@@ -162,6 +162,8 @@
     <ClCompile Include="..\payroll\src\AddSalariedEmployee.cpp" />
     <ClCompile Include="..\payroll\src\Affiliation.cpp" />
     <ClCompile Include="..\payroll\src\BiweeklySchedule.cpp" />
+    <ClCompile Include="..\payroll\src\ChangeEmployeeTransaction.cpp" />
+    <ClCompile Include="..\payroll\src\ChangeNameTransaction.cpp" />
     <ClCompile Include="..\payroll\src\CommissionedClassification.cpp" />
     <ClCompile Include="..\payroll\src\DeleteEmployeeTransaction.cpp" />
     <ClCompile Include="..\payroll\src\DirectMethod.cpp" />
@@ -188,6 +190,7 @@
     <ClCompile Include="AddHourlyEmployee_test.cpp" />
     <ClCompile Include="AddSalariedEmployee_test.cpp" />
     <ClCompile Include="AddServiceChargeTest.cpp" />
+    <ClCompile Include="ChangeNameTransactionTest.cpp" />
     <ClCompile Include="DeleteEmployeeTest.cpp" />
     <ClCompile Include="payroll_test.cpp" />
     <ClCompile Include="SalesReceiptTransactionTest.cpp" />

@@ -19,6 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\ChangeEmployeeTransaction.cpp" />
+    <ClCompile Include="src\ChangeNameTransaction.cpp" />
     <ClCompile Include="src\ServiceCharge.cpp" />
     <ClCompile Include="src\ServiceChargeTransaction.cpp" />
     <ClCompile Include="src\Affiliation.cpp" />
@@ -50,6 +52,8 @@
     <ClCompile Include="src\TimeCardTransaction.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\ChangeEmployeeTransaction.h" />
+    <ClInclude Include="src\ChangeNameTransaction.h" />
     <ClInclude Include="src\ServiceCharge.h" />
     <ClInclude Include="src\ServiceChargeTransaction.h" />
     <ClInclude Include="src\Affiliation.h" />
