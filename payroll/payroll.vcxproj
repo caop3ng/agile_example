@@ -19,8 +19,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\ServiceCharge.cpp" />
+    <ClCompile Include="src\ServiceChargeTransaction.cpp" />
+    <ClCompile Include="src\Affiliation.cpp" />
     <ClCompile Include="src\SalesReceipt.cpp" />
     <ClCompile Include="src\SalesReceiptTransaction.cpp" />
+    <ClCompile Include="src\UnionAffiliation.cpp" />
     <ClCompile Include="util\Date.cpp" />
     <ClCompile Include="src\DeleteEmployeeTransaction.cpp" />
     <ClCompile Include="src\AddCommissionedEmployee.cpp" />
@@ -46,8 +50,12 @@
     <ClCompile Include="src\TimeCardTransaction.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\ServiceCharge.h" />
+    <ClInclude Include="src\ServiceChargeTransaction.h" />
+    <ClInclude Include="src\Affiliation.h" />
     <ClInclude Include="src\SalesReceipt.h" />
     <ClInclude Include="src\SalesReceiptTransaction.h" />
+    <ClInclude Include="src\UnionAffiliation.h" />
     <ClInclude Include="util\Date.h" />
     <ClInclude Include="src\DeleteEmployeeTransaction.h" />
     <ClInclude Include="src\AddCommissionedEmployee.h" />

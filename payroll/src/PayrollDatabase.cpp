@@ -38,3 +38,27 @@ void PayrollDatabase::DeleteEmployee(int empid)
     itsEmployees.erase(it);
   }
 }
+
+void PayrollDatabase::AddUnionMember(int memberId, Employee* e)
+{
+  itsUnionMembers[memberId] = e;
+}
+
+Employee* PayrollDatabase::GetUnionMember(int memberId) const
+{
+  auto it = itsUnionMembers.find(memberId);
+  if (it == itsUnionMembers.end())
+  {
+    return nullptr;
+  }
+  else
+  {
+    return it->second;
+  }
+}
+
+void PayrollDatabase::clear()
+{
+  itsEmployees.clear();
+  itsUnionMembers.clear();
+}

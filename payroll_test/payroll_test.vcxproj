@@ -160,6 +160,7 @@
     <ClCompile Include="..\payroll\src\AddEmployeeTransaction.cpp" />
     <ClCompile Include="..\payroll\src\AddHourlyEmployee.cpp" />
     <ClCompile Include="..\payroll\src\AddSalariedEmployee.cpp" />
+    <ClCompile Include="..\payroll\src\Affiliation.cpp" />
     <ClCompile Include="..\payroll\src\BiweeklySchedule.cpp" />
     <ClCompile Include="..\payroll\src\CommissionedClassification.cpp" />
     <ClCompile Include="..\payroll\src\DeleteEmployeeTransaction.cpp" />
@@ -176,13 +177,17 @@
     <ClCompile Include="..\payroll\src\SalariedClassification.cpp" />
     <ClCompile Include="..\payroll\src\SalesReceipt.cpp" />
     <ClCompile Include="..\payroll\src\SalesReceiptTransaction.cpp" />
+    <ClCompile Include="..\payroll\src\ServiceCharge.cpp" />
+    <ClCompile Include="..\payroll\src\ServiceChargeTransaction.cpp" />
     <ClCompile Include="..\payroll\src\TimeCard.cpp" />
     <ClCompile Include="..\payroll\src\TimeCardTransaction.cpp" />
+    <ClCompile Include="..\payroll\src\UnionAffiliation.cpp" />
     <ClCompile Include="..\payroll\src\WeeklySchedule.cpp" />
     <ClCompile Include="..\payroll\util\Date.cpp" />
     <ClCompile Include="AddCommissionedEmployee_test.cpp" />
     <ClCompile Include="AddHourlyEmployee_test.cpp" />
     <ClCompile Include="AddSalariedEmployee_test.cpp" />
+    <ClCompile Include="AddServiceChargeTest.cpp" />
     <ClCompile Include="DeleteEmployeeTest.cpp" />
     <ClCompile Include="payroll_test.cpp" />
     <ClCompile Include="SalesReceiptTransactionTest.cpp" />

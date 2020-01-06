@@ -106,6 +106,21 @@
     <ClCompile Include="..\payroll\src\SalesReceiptTransaction.cpp">
       <Filter>testfile</Filter>
     </ClCompile>
+    <ClCompile Include="..\payroll\src\Affiliation.cpp">
+      <Filter>testfile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\payroll\src\ServiceCharge.cpp">
+      <Filter>testfile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\payroll\src\ServiceChargeTransaction.cpp">
+      <Filter>testfile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\payroll\src\UnionAffiliation.cpp">
+      <Filter>testfile</Filter>
+    </ClCompile>
+    <ClCompile Include="AddServiceChargeTest.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="all_hearder.h">

@@ -66,6 +66,12 @@
     <ClCompile Include="src\SalesReceiptTransaction.cpp">
       <Filter>transaction</Filter>
     </ClCompile>
+    <ClCompile Include="src\Affiliation.cpp" />
+    <ClCompile Include="src\UnionAffiliation.cpp" />
+    <ClCompile Include="src\ServiceCharge.cpp" />
+    <ClCompile Include="src\ServiceChargeTransaction.cpp">
+      <Filter>transaction</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Employee.h" />
@@ -133,6 +139,12 @@
     </ClInclude>
     <ClInclude Include="src\SalesReceipt.h" />
     <ClInclude Include="src\SalesReceiptTransaction.h">
+      <Filter>transaction</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Affiliation.h" />
+    <ClInclude Include="src\UnionAffiliation.h" />
+    <ClInclude Include="src\ServiceCharge.h" />
+    <ClInclude Include="src\ServiceChargeTransaction.h">
       <Filter>transaction</Filter>
     </ClInclude>
   </ItemGroup>

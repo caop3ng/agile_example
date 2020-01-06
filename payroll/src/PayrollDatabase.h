@@ -12,13 +12,14 @@ public:
   Employee* GetEmployee(int empId);
   void AddEmployee(int empid, Employee*);
   void DeleteEmployee(int empid);
-  void clear()
-  {
-    itsEmployees.clear();
-  }
+  void AddUnionMember(int memberId, Employee*);
+  Employee* GetUnionMember(int memberId) const;
+
+  void clear();
 
 private:
   std::map<int, Employee*> itsEmployees;
+  std::map<int, Employee*> itsUnionMembers;
 };
 
 #endif // !PAYROLLDATABASE_H

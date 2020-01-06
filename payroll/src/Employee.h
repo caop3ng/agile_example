@@ -6,6 +6,7 @@ class PaymentMethod;
 class Afiliation;
 class PaymentClassification;
 class PaymentSchedule;
+class Affiliation;
 
 class Employee
 {
@@ -16,18 +17,21 @@ public:
   PaymentClassification* GetClassification() const;
   PaymentSchedule* GetSchedule() const;
   PaymentMethod* GetMethod() const;
+  Affiliation* GetAffiliation() const;
 
   void SetClassification(PaymentClassification*);
   void SetSchedule(PaymentSchedule*);
   void SetMethod(PaymentMethod*);
-  
+  void SetAffiliation(Affiliation*);
 
 private:
   int itsEmpId;
   std::string itsName;
   std::string itsAddress;
-  PaymentMethod* itsMethod;
-  PaymentSchedule* itsSchedule;
-  PaymentClassification* itsClassification;
+  PaymentMethod* itsMethod{ nullptr };
+  PaymentSchedule* itsSchedule{ nullptr };
+  PaymentClassification* itsClassification{ nullptr };
+  Affiliation* itsAffiliation{ nullptr };
+
 };
 
