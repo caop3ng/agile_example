@@ -57,6 +57,19 @@ Employee* PayrollDatabase::GetUnionMember(int memberId) const
   }
 }
 
+void PayrollDatabase::RemoveUnionMember(int memberId)
+{
+  auto it = itsUnionMembers.find(memberId);
+  if (it != itsUnionMembers.end())
+  {
+    itsUnionMembers.erase(it);
+  }
+  else
+  {
+    //assert(0);
+  }
+}
+
 void PayrollDatabase::clear()
 {
   itsEmployees.clear();

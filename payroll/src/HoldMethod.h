@@ -3,5 +3,6 @@
 class HoldMethod :
   public PaymentMethod
 {
+
 };
 

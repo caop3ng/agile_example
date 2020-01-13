@@ -14,6 +14,7 @@ public:
   void DeleteEmployee(int empid);
   void AddUnionMember(int memberId, Employee*);
   Employee* GetUnionMember(int memberId) const;
+  void RemoveUnionMember(int memberId);
 
   void clear();
 

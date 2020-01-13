@@ -162,8 +162,17 @@
     <ClCompile Include="..\payroll\src\AddSalariedEmployee.cpp" />
     <ClCompile Include="..\payroll\src\Affiliation.cpp" />
     <ClCompile Include="..\payroll\src\BiweeklySchedule.cpp" />
+    <ClCompile Include="..\payroll\src\ChangeAffiliationTransaction.cpp" />
+    <ClCompile Include="..\payroll\src\ChangeClassificationTransaction.cpp" />
+    <ClCompile Include="..\payroll\src\ChangeCommissionedTransaction.cpp" />
+    <ClCompile Include="..\payroll\src\ChangeDirectTransaction.cpp" />
     <ClCompile Include="..\payroll\src\ChangeEmployeeTransaction.cpp" />
+    <ClCompile Include="..\payroll\src\ChangeHourlyTransaction.cpp" />
+    <ClCompile Include="..\payroll\src\ChangeMemberTransaction.cpp" />
+    <ClCompile Include="..\payroll\src\ChangeMethodTransaction.cpp" />
     <ClCompile Include="..\payroll\src\ChangeNameTransaction.cpp" />
+    <ClCompile Include="..\payroll\src\ChangeSalariedTransaction.cpp" />
+    <ClCompile Include="..\payroll\src\ChangeUnaffiliationTransaction.cpp" />
     <ClCompile Include="..\payroll\src\CommissionedClassification.cpp" />
     <ClCompile Include="..\payroll\src\DeleteEmployeeTransaction.cpp" />
     <ClCompile Include="..\payroll\src\DirectMethod.cpp" />
@@ -172,6 +181,7 @@
     <ClCompile Include="..\payroll\src\HourlyClassification.cpp" />
     <ClCompile Include="..\payroll\src\MailMethod.cpp" />
     <ClCompile Include="..\payroll\src\MonthlySchedule.cpp" />
+    <ClCompile Include="..\payroll\src\NoAffiliation.cpp" />
     <ClCompile Include="..\payroll\src\PaymentClassification.cpp" />
     <ClCompile Include="..\payroll\src\PaymentMethod.cpp" />
     <ClCompile Include="..\payroll\src\PaymentSchedule.cpp" />
@@ -190,6 +200,9 @@
     <ClCompile Include="AddHourlyEmployee_test.cpp" />
     <ClCompile Include="AddSalariedEmployee_test.cpp" />
     <ClCompile Include="AddServiceChargeTest.cpp" />
+    <ClCompile Include="ChangeAffiliationTest.cpp" />
+    <ClCompile Include="ChangeClassificationTest.cpp" />
+    <ClCompile Include="ChangeMethodTransactionTest.cpp" />
     <ClCompile Include="ChangeNameTransactionTest.cpp" />
     <ClCompile Include="DeleteEmployeeTest.cpp" />
     <ClCompile Include="payroll_test.cpp" />

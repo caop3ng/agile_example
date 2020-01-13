@@ -11,8 +11,11 @@ public:
   UnionAffiliation(int memberId, double dues);
 
   double GetFee(Date dt) const;
+  double GetDues() const;
+  int GetMemberId() const;
   void AddServiceCharge(ServiceCharge*);
   ServiceCharge* GetServiceCharge(Date dt) const;
+  
 
 private:
   int itsMemberId{ -1 };

@@ -8,7 +8,7 @@
 
 TEST(Payroll, AddServiceCharge)
 {
-  int empId = 6;
+  int empId = ++MAX_EMP_ID;
   AddHourlyEmployee t(empId, "Bill", "Home", 15.25);
   t.Execute();
 

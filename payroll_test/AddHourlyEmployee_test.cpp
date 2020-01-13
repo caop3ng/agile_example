@@ -6,12 +6,13 @@
 #include "HoldMethod.h"
 #include "HourlyClassification.h"
 #include "WeeklySchedule.h"
+#include "all_hearder.h"
 
 extern PayrollDatabase GpayrollDatabase;
 
 TEST(Payroll, AddHourlyEmployee)
 {
-  int empId = 2;
+  int empId = ++MAX_EMP_ID;
   AddHourlyEmployee t(empId, "xxx", "home", 50);
   t.Execute();
 

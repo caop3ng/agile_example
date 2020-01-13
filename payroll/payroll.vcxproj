@@ -19,8 +19,18 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\ChangeAffiliationTransaction.cpp" />
+    <ClCompile Include="src\ChangeClassificationTransaction.cpp" />
+    <ClCompile Include="src\ChangeCommissionedTransaction.cpp" />
+    <ClCompile Include="src\ChangeDirectTransaction.cpp" />
     <ClCompile Include="src\ChangeEmployeeTransaction.cpp" />
+    <ClCompile Include="src\ChangeHourlyTransaction.cpp" />
+    <ClCompile Include="src\ChangeMemberTransaction.cpp" />
+    <ClCompile Include="src\ChangeMethodTransaction.cpp" />
     <ClCompile Include="src\ChangeNameTransaction.cpp" />
+    <ClCompile Include="src\ChangeSalariedTransaction.cpp" />
+    <ClCompile Include="src\ChangeUnaffiliationTransaction.cpp" />
+    <ClCompile Include="src\NoAffiliation.cpp" />
     <ClCompile Include="src\ServiceCharge.cpp" />
     <ClCompile Include="src\ServiceChargeTransaction.cpp" />
     <ClCompile Include="src\Affiliation.cpp" />
@@ -52,8 +62,18 @@
     <ClCompile Include="src\TimeCardTransaction.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\ChangeAffiliationTransaction.h" />
+    <ClInclude Include="src\ChangeClassificationTransaction.h" />
+    <ClInclude Include="src\ChangeCommissionedTransaction.h" />
+    <ClInclude Include="src\ChangeDirectTransaction.h" />
     <ClInclude Include="src\ChangeEmployeeTransaction.h" />
+    <ClInclude Include="src\ChangeHourlyTransaction.h" />
+    <ClInclude Include="src\ChangeMemberTransaction.h" />
+    <ClInclude Include="src\ChangeMethodTransaction.h" />
     <ClInclude Include="src\ChangeNameTransaction.h" />
+    <ClInclude Include="src\ChangeSalariedTransaction.h" />
+    <ClInclude Include="src\ChangeUnaffiliationTransaction.h" />
+    <ClInclude Include="src\NoAffiliation.h" />
     <ClInclude Include="src\ServiceCharge.h" />
     <ClInclude Include="src\ServiceChargeTransaction.h" />
     <ClInclude Include="src\Affiliation.h" />

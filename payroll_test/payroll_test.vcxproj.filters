@@ -130,6 +130,45 @@
     <ClCompile Include="..\payroll\src\ChangeNameTransaction.cpp">
       <Filter>testfile</Filter>
     </ClCompile>
+    <ClCompile Include="..\payroll\src\ChangeClassificationTransaction.cpp">
+      <Filter>testfile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\payroll\src\ChangeHourlyTransaction.cpp">
+      <Filter>testfile</Filter>
+    </ClCompile>
+    <ClCompile Include="ChangeClassificationTest.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\payroll\src\ChangeSalariedTransaction.cpp">
+      <Filter>testfile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\payroll\src\ChangeCommissionedTransaction.cpp">
+      <Filter>testfile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\payroll\src\ChangeDirectTransaction.cpp">
+      <Filter>testfile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\payroll\src\ChangeMethodTransaction.cpp">
+      <Filter>testfile</Filter>
+    </ClCompile>
+    <ClCompile Include="ChangeMethodTransactionTest.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\payroll\src\ChangeAffiliationTransaction.cpp">
+      <Filter>testfile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\payroll\src\ChangeMemberTransaction.cpp">
+      <Filter>testfile</Filter>
+    </ClCompile>
+    <ClCompile Include="ChangeAffiliationTest.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\payroll\src\ChangeUnaffiliationTransaction.cpp">
+      <Filter>testfile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\payroll\src\NoAffiliation.cpp">
+      <Filter>testfile</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="all_hearder.h">

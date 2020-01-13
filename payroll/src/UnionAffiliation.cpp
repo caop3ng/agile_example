@@ -12,6 +12,16 @@ double UnionAffiliation::GetFee(Date dt) const
   return 0;
 }
 
+double UnionAffiliation::GetDues() const
+{
+  return itsDues;
+}
+
+int UnionAffiliation::GetMemberId() const
+{
+  return itsMemberId;
+}
+
 void UnionAffiliation::AddServiceCharge(ServiceCharge* sc)
 {
   itsServiceCharges.push_back(sc);
