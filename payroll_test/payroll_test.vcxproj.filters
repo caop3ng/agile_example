@@ -169,6 +169,15 @@
     <ClCompile Include="..\payroll\src\NoAffiliation.cpp">
       <Filter>testfile</Filter>
     </ClCompile>
+    <ClCompile Include="PaydayTest.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\payroll\src\PaydayTransaction.cpp">
+      <Filter>testfile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\payroll\src\Paycheck.cpp">
+      <Filter>testfile</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="all_hearder.h">

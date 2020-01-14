@@ -7,6 +7,8 @@ class SalariedClassification :
 public:
   SalariedClassification(double salary);
 
+  double CalculatePay(Paycheck&) const;
+
   double GetSalary() const;
 
 private:

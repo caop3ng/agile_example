@@ -11,6 +11,8 @@ class CommissionedClassification :
 public:
   CommissionedClassification(double salary, double commissionRate);
 
+  double CalculatePay(Paycheck&) const;
+
   double GetSalary() const;
   double GetCommissionRate() const;
   void AddSalesReceipts(SalesReceipt*);

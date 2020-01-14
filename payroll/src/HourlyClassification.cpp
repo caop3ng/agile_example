@@ -11,6 +11,11 @@ HourlyClassification::~HourlyClassification()
 
 }
 
+double HourlyClassification::CalculatePay(Paycheck& pc) const
+{
+  return 0;
+}
+
 double HourlyClassification::GetHourlyRate() const
 {
   return itsHourlyRate;
@@ -25,7 +30,7 @@ TimeCard* HourlyClassification::GetTimeCard(Date dt) const
 {
   for (const auto& tc : itsTimeCards)
   {
-    if (tc->GetDate().Equal(dt))
+    if (tc->GetDate() == dt)
     {
       return tc;
     }

@@ -5,6 +5,6 @@ class MonthlySchedule :
   public PaymentSchedule
 {
 public:
-  //~MonthlySchedule();
+  bool IsPayDate(Date) const;
 };
 

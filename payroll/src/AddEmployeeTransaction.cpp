@@ -2,6 +2,7 @@
 #include "HoldMethod.h"
 #include "Employee.h"
 #include "PayrollDatabase.h"
+#include "NoAffiliation.h"
 
 extern PayrollDatabase GpayrollDatabase;
 
@@ -28,6 +29,8 @@ void AddEmployeeTransaction::Execute()
   e->SetClassification(pc);
   e->SetSchedule(ps);
   e->SetMethod(pm);
+  
+  e->SetAffiliation(new NoAffiliation());
 
   GpayrollDatabase.AddEmployee(itsEmpId, e);
 }

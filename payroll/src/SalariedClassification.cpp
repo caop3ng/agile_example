@@ -6,6 +6,11 @@ SalariedClassification::SalariedClassification(double salary)
 
 }
 
+double SalariedClassification::CalculatePay(Paycheck& pc) const
+{
+  return itsSalary;
+}
+
 double SalariedClassification::GetSalary() const
 {
   return itsSalary;

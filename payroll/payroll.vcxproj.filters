@@ -1,9 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="src\Employee.cpp" />
-    <ClCompile Include="src\payroll.cpp" />
-    <ClCompile Include="src\PayrollDatabase.cpp" />
     <ClCompile Include="src\CommissionedClassification.cpp">
       <Filter>classification</Filter>
     </ClCompile>
@@ -55,18 +52,15 @@
     <ClCompile Include="src\DeleteEmployeeTransaction.cpp">
       <Filter>transaction</Filter>
     </ClCompile>
-    <ClCompile Include="src\TimeCard.cpp" />
     <ClCompile Include="src\TimeCardTransaction.cpp">
       <Filter>transaction</Filter>
     </ClCompile>
     <ClCompile Include="util\Date.cpp">
       <Filter>util</Filter>
     </ClCompile>
-    <ClCompile Include="src\SalesReceipt.cpp" />
     <ClCompile Include="src\SalesReceiptTransaction.cpp">
       <Filter>transaction</Filter>
     </ClCompile>
-    <ClCompile Include="src\ServiceCharge.cpp" />
     <ClCompile Include="src\ServiceChargeTransaction.cpp">
       <Filter>transaction</Filter>
     </ClCompile>
@@ -112,10 +106,32 @@
     <ClCompile Include="src\ChangeUnaffiliationTransaction.cpp">
       <Filter>transaction</Filter>
     </ClCompile>
+    <ClCompile Include="src\PaydayTransaction.cpp">
+      <Filter>transaction</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Employee.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\payroll.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PayrollDatabase.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SalesReceipt.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ServiceCharge.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TimeCard.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Paycheck.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Employee.h" />
-    <ClInclude Include="src\PayrollDatabase.h" />
     <ClInclude Include="src\CommissionedClassification.h">
       <Filter>classification</Filter>
     </ClInclude>
@@ -170,18 +186,15 @@
     <ClInclude Include="src\DeleteEmployeeTransaction.h">
       <Filter>transaction</Filter>
     </ClInclude>
-    <ClInclude Include="src\TimeCard.h" />
     <ClInclude Include="src\TimeCardTransaction.h">
       <Filter>transaction</Filter>
     </ClInclude>
     <ClInclude Include="util\Date.h">
       <Filter>util</Filter>
     </ClInclude>
-    <ClInclude Include="src\SalesReceipt.h" />
     <ClInclude Include="src\SalesReceiptTransaction.h">
       <Filter>transaction</Filter>
     </ClInclude>
-    <ClInclude Include="src\ServiceCharge.h" />
     <ClInclude Include="src\ServiceChargeTransaction.h">
       <Filter>transaction</Filter>
     </ClInclude>
@@ -227,6 +240,27 @@
     <ClInclude Include="src\ChangeUnaffiliationTransaction.h">
       <Filter>transaction</Filter>
     </ClInclude>
+    <ClInclude Include="src\PaydayTransaction.h">
+      <Filter>transaction</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Employee.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PayrollDatabase.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SalesReceipt.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ServiceCharge.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TimeCard.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Paycheck.h">
+      <Filter>core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="schedule">
@@ -246,6 +280,9 @@
     </Filter>
     <Filter Include="affiliation">
       <UniqueIdentifier>{59376def-c034-44db-bf9f-226ad93ad058}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core">
+      <UniqueIdentifier>{432e466f-17a6-4e25-800e-398bd83c5839}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

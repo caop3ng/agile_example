@@ -4,5 +4,7 @@
 class WeeklySchedule :
   public PaymentSchedule
 {
+public:
+  bool IsPayDate(Date) const;
 };
 

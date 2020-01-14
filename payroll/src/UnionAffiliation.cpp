@@ -12,6 +12,11 @@ double UnionAffiliation::GetFee(Date dt) const
   return 0;
 }
 
+double UnionAffiliation::CalculateDeduction(Paycheck&) const
+{
+  return itsDues;
+}
+
 double UnionAffiliation::GetDues() const
 {
   return itsDues;
@@ -31,7 +36,7 @@ ServiceCharge* UnionAffiliation::GetServiceCharge(Date dt) const
 {
   for (const auto& sc : itsServiceCharges)
   {
-    if (sc->GetDate().Equal(dt))
+    if (sc->GetDate() == dt)
     {
       return sc;
     }

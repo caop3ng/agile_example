@@ -7,6 +7,11 @@ CommissionedClassification::CommissionedClassification(double salary, double com
 
 }
 
+double CommissionedClassification::CalculatePay(Paycheck&) const
+{
+  return 0;
+}
+
 double CommissionedClassification::GetSalary() const
 {
   return itsSalary;
@@ -26,7 +31,7 @@ SalesReceipt* CommissionedClassification::GetSalesReceipt(Date dt) const
 {
   for (const auto& sr : itsSalesReceipts)
   {
-    if (sr->GetDate().Equal(dt))
+    if (sr->GetDate() == dt)
     {
       return sr;
     }

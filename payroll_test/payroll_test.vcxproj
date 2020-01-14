@@ -182,6 +182,8 @@
     <ClCompile Include="..\payroll\src\MailMethod.cpp" />
     <ClCompile Include="..\payroll\src\MonthlySchedule.cpp" />
     <ClCompile Include="..\payroll\src\NoAffiliation.cpp" />
+    <ClCompile Include="..\payroll\src\Paycheck.cpp" />
+    <ClCompile Include="..\payroll\src\PaydayTransaction.cpp" />
     <ClCompile Include="..\payroll\src\PaymentClassification.cpp" />
     <ClCompile Include="..\payroll\src\PaymentMethod.cpp" />
     <ClCompile Include="..\payroll\src\PaymentSchedule.cpp" />
@@ -205,6 +207,7 @@
     <ClCompile Include="ChangeMethodTransactionTest.cpp" />
     <ClCompile Include="ChangeNameTransactionTest.cpp" />
     <ClCompile Include="DeleteEmployeeTest.cpp" />
+    <ClCompile Include="PaydayTest.cpp" />
     <ClCompile Include="payroll_test.cpp" />
     <ClCompile Include="SalesReceiptTransactionTest.cpp" />
     <ClCompile Include="TimeCardTransactionTest.cpp" />

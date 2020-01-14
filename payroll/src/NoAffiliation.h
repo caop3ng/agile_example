@@ -10,6 +10,8 @@ public:
   NoAffiliation();
 
   double GetFee(Date dt) const;
+  double CalculateDeduction(Paycheck&) const;
+
   double GetDues() const;
 };
 

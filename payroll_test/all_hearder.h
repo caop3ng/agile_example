@@ -22,6 +22,9 @@
 #include "UnionAffiliation.h"
 #include "ChangeUnaffiliationTransaction.h"
 #include "NoAffiliation.h"
+#include "AddSalariedEmployee.h"
+#include "PaydayTransaction.h"
+#include "Paycheck.h"
 
 extern PayrollDatabase GpayrollDatabase;
 extern int MAX_EMP_ID;

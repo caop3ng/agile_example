@@ -3,5 +3,7 @@
 class BiweeklySchedule :
   public PaymentSchedule
 {
+public:
+  bool IsPayDate(Date) const;
 };
 

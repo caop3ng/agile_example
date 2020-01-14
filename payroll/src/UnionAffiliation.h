@@ -11,6 +11,8 @@ public:
   UnionAffiliation(int memberId, double dues);
 
   double GetFee(Date dt) const;
+  double CalculateDeduction(Paycheck&) const;
+
   double GetDues() const;
   int GetMemberId() const;
   void AddServiceCharge(ServiceCharge*);
