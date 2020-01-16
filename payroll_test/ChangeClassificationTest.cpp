@@ -2,7 +2,7 @@
 
 #include "all_hearder.h"
 
-TEST(Payroll, ChangeHourlyClassification)
+TEST(ChangeClassification, ChangeHourlyClassification)
 {
   int empId = ++MAX_EMP_ID;
   AddCommissionedEmployee t(empId, "Lance", "Home", 2500, 3.2);
@@ -25,7 +25,7 @@ TEST(Payroll, ChangeHourlyClassification)
   EXPECT_NE(ws, nullptr);
 }
 
-TEST(Payroll, ChangeSalariedClassification)
+TEST(ChangeClassification, ChangeSalariedClassification)
 {
   int empId = ++MAX_EMP_ID;
   AddCommissionedEmployee t(empId, "PPP", "Home", 2500, 3.2);
@@ -48,7 +48,7 @@ TEST(Payroll, ChangeSalariedClassification)
   EXPECT_NE(ms, nullptr);
 }
 
-TEST(Payroll, ChangeCommissionedClassification)
+TEST(ChangeClassification, ChangeCommissionedClassification)
 {
   int empId = ++MAX_EMP_ID;
   AddHourlyEmployee t(empId, "XXX", "Home", 20);

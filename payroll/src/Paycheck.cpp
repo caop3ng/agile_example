@@ -49,5 +49,5 @@ std::string Paycheck::GetField(const std::string& field) const
 
 Date Paycheck::GetPayPeriodEndDate() const
 {
-
+  return Date();
 }

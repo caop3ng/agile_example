@@ -1,6 +1,6 @@
 #include "WeeklySchedule.h"
 
-bool WeeklySchedule::IsPayDate(Date) const
+bool WeeklySchedule::IsPayDate(Date dt) const
 {
-  return false;
+  return dt.GetDayOfWeek() == Date::friday;
 }

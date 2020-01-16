@@ -19,6 +19,10 @@ public:
   TimeCard* GetTimeCard(Date dt) const;
 
 private:
+
+  bool IsInPayPeriod(TimeCard* tc, const Date& payPeriod) const;
+  double CalculatePayForTimeCard(TimeCard* tc) const;
+
   double itsHourlyRate{ -1 };
   std::vector<TimeCard*> itsTimeCards;
 };

@@ -7,7 +7,7 @@
 
 extern PayrollDatabase GpayrollDatabase;
 
-TEST(Payroll, DeleteEmployee)
+TEST(DeleteEmployee, DeleteEmployee)
 {
   int empId = ++MAX_EMP_ID;
   AddCommissionedEmployee t(empId, "Lance", "Home", 2500, 3.2);

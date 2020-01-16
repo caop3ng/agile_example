@@ -25,6 +25,7 @@
 #include "AddSalariedEmployee.h"
 #include "PaydayTransaction.h"
 #include "Paycheck.h"
+#include "TimeCardTransaction.h"
 
 extern PayrollDatabase GpayrollDatabase;
 extern int MAX_EMP_ID;
