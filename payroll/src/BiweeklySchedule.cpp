@@ -7,3 +7,8 @@ bool BiweeklySchedule::IsPayDate(Date dt) const
 
   return (daysSinceFirstPayableFriday % 14) == 0;
 }
+
+Date BiweeklySchedule::GetPayPeriodStartDate(const Date& endDate) const
+{
+  return endDate - 13;
+}

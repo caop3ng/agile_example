@@ -5,5 +5,6 @@ class BiweeklySchedule :
 {
 public:
   bool IsPayDate(Date) const;
+  Date GetPayPeriodStartDate(const Date&) const;
 };
 

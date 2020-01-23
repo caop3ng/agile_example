@@ -35,15 +35,16 @@ TEST(PaydayTest, PaySingleSalariedEmployeeOnWrongDate)
   EXPECT_EQ(pc, nullptr);
 }
 
-void ValidatePaycheck(PaydayTransaction& pt, int empId, const Date& payDate, double pay)
+void ValidatePaycheck(PaydayTransaction& pt, int empId, const Date& payDate,
+  double grossPay, double deduction = 0)
 {
   Paycheck* pc = pt.GetPaycheck(empId);
   EXPECT_NE(pc, nullptr);
   //EXPECT_EQ(pc->GetPayPeriodEndDate(), payDate);
-  EXPECT_EQ(pc->GetGrossPay(), pay);
+  EXPECT_EQ(pc->GetGrossPay(), grossPay);
   //EXPECT_EQ(pc->GetField("Disposition") == "Hold");
-  EXPECT_EQ(pc->GetDeduction(), 0);
-  EXPECT_EQ(pc->GetNetPay(), pay);
+  EXPECT_EQ(pc->GetDeduction(), deduction);
+  EXPECT_EQ(pc->GetNetPay(), grossPay - deduction);
 }
 
 TEST(PaydayTest, PaySingleHourlyEmployeeNoTimeCards)
@@ -230,4 +231,89 @@ TEST(PaydayTest, PaySingleCommissionedEmployeeWrongPayDate)
 
   auto pc = pt.GetPaycheck(empId);
   EXPECT_EQ(pc, nullptr);
+}
+
+TEST(PayUnionMember, PaySalariedUnionMemberDues)
+{
+  GpayrollDatabase.clear();
+
+  int empId = ++MAX_EMP_ID;
+  AddSalariedEmployee t(empId, "Bob", "Home", 1000.00);
+  t.Execute();
+
+  int memberId = 2233;
+  ChangeMemberTransaction cmt(empId, memberId, 9.42);
+  cmt.Execute();
+
+  Date payDate(11, 30, 2001);
+  PaydayTransaction pt(payDate);
+  pt.Execute();
+
+  ValidatePaycheck(pt, empId, payDate, 1000, 9.42*5);
+}
+
+TEST(PayUnionMember, PayHourlyUnionMemberServiceCharge)
+{
+  int empId = ++MAX_EMP_ID;
+  AddHourlyEmployee t(empId, "Bill", "Home", 15.24);
+  t.Execute();
+
+  int memberId = 3355;
+  ChangeMemberTransaction cmt(empId, memberId, 9.42);
+  cmt.Execute();
+
+  Date payDate(11, 9, 2001);
+  ServiceChargeTransaction sct(memberId, payDate, 19.42);
+  sct.Execute();
+
+  TimeCardTransaction tct(payDate, 8.0, empId);
+  tct.Execute();
+
+  PaydayTransaction pt(payDate);
+  pt.Execute();
+
+  auto pc = pt.GetPaycheck(empId);
+  EXPECT_NE(pc, nullptr);
+  EXPECT_EQ(payDate, pc->GetPayPeriodEndDate());
+  EXPECT_EQ(8 * 15.24, pc->GetGrossPay());
+
+  EXPECT_EQ(9.42 + 19.42, pc->GetDeduction());
+  EXPECT_EQ(8 * 15.24 - (9.42 + 19.42), pc->GetNetPay());
+}
+
+TEST(PayUnionMember, ServiceChargeSpanningMultiplePayPeriods)
+{
+  int empId = ++MAX_EMP_ID;
+  AddHourlyEmployee t(empId, "Bill", "Home", 15.24);
+  t.Execute();
+
+  int memberId = 5566;
+  ChangeMemberTransaction cmt(empId, memberId, 9.42);
+  cmt.Execute();
+
+  Date earlyDate(11, 2, 2001);
+  Date payDate(11, 9, 2001);
+  Date lateDate(11, 16, 2001);
+  ServiceChargeTransaction sct(memberId, payDate, 19.42);
+  sct.Execute();
+
+  ServiceChargeTransaction sctEarly(memberId, earlyDate, 100.00);
+  sctEarly.Execute();
+
+  ServiceChargeTransaction sctLate(memberId, lateDate, 200.00);
+  sctLate.Execute();
+
+  TimeCardTransaction tct(payDate, 8.0, empId);
+  tct.Execute();
+
+  PaydayTransaction pt(payDate);
+  pt.Execute();
+
+  auto pc = pt.GetPaycheck(empId);
+  EXPECT_NE(pc, nullptr);
+  EXPECT_EQ(payDate, pc->GetPayPeriodEndDate());
+  EXPECT_EQ(8 * 15.24, pc->GetGrossPay());
+
+  EXPECT_EQ(9.42 + 19.42, pc->GetDeduction());
+  EXPECT_EQ(8 * 15.24 - (9.42 + 19.42), pc->GetNetPay());
 }
