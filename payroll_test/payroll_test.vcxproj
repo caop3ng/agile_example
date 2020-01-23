@@ -72,7 +72,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);E:\third_party\googletest-release-1.10.0\googletest\include;..\payroll\src</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);E:\third_party\vcpkg\installed\x64-windows-static\include;..\payroll\src</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
@@ -98,7 +98,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>E:\third_party\googletest-release-1.10.0\googletest\build\lib\Debug</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>E:\third_party\vcpkg\installed\x64-windows-static\debug\lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>gtestd.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
