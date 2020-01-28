@@ -1,5 +1,4 @@
 #include <gtest/gtest.h>
-
 #include "all_hearder.h"
 
 TEST(PaydayTest, PaySingleSalariedEmployee)

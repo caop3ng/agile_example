@@ -112,9 +112,6 @@
     <ClCompile Include="src\Employee.cpp">
       <Filter>core</Filter>
     </ClCompile>
-    <ClCompile Include="src\payroll.cpp">
-      <Filter>core</Filter>
-    </ClCompile>
     <ClCompile Include="src\PayrollDatabase.cpp">
       <Filter>core</Filter>
     </ClCompile>
@@ -130,6 +127,11 @@
     <ClCompile Include="src\Paycheck.cpp">
       <Filter>core</Filter>
     </ClCompile>
+    <ClCompile Include="src\Application.cpp" />
+    <ClCompile Include="src\TransactionSource.cpp" />
+    <ClCompile Include="src\PayrollApplication.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\TextParserTransactionSource.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\CommissionedClassification.h">
@@ -261,6 +263,10 @@
     <ClInclude Include="src\Paycheck.h">
       <Filter>core</Filter>
     </ClInclude>
+    <ClInclude Include="src\Application.h" />
+    <ClInclude Include="src\TransactionSource.h" />
+    <ClInclude Include="src\PayrollApplication.h" />
+    <ClInclude Include="src\TextParserTransactionSource.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="schedule">
