@@ -4,6 +4,8 @@
 #include <iostream>
 #include <gtest/gtest.h>
 
+int MAX_EMP_ID = 0;
+
 int main(int argc, char** argv)
 {
   testing::InitGoogleTest(&argc, argv);

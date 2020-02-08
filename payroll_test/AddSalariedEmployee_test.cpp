@@ -6,12 +6,11 @@
 #include "HoldMethod.h"
 #include "SalariedClassification.h"
 #include "MonthlySchedule.h"
-
-extern PayrollDatabase GpayrollDatabase;
+#include "all_hearder.h"
 
 TEST(Payroll, AddSalariedEmployee)
 {
-  int empId = 1;
+  int empId = ++MAX_EMP_ID;
   AddSalariedEmployee t(empId, "Bob", "Home", 1000.00);
   t.Execute();
 

@@ -1,11 +1,15 @@
 #include "Employee.h"
+#include "PaymentSchedule.h"
+#include "Paycheck.h"
+#include "PaymentClassification.h"
+#include "Affiliation.h"
+#include "PaymentMethod.h"
 
 Employee::Employee(int empId, std::string name, std::string address)
   : itsEmpId(empId), 
   itsName(name),
   itsAddress(address)
 {
-
 }
 
 std::string Employee::GetName() const
@@ -33,6 +37,16 @@ Affiliation* Employee::GetAffiliation() const
   return itsAffiliation;
 }
 
+bool Employee::IsPayDate(Date dt) const
+{
+  return itsSchedule->IsPayDate(dt);
+}
+
+Date Employee::GetPayPeriodStartDate(Date payDate) const
+{
+  return itsSchedule->GetPayPeriodStartDate(payDate);
+}
+
 void Employee::SetName(const std::string name)
 {
   itsName = name;
@@ -56,4 +70,17 @@ void Employee::SetMethod(PaymentMethod* pm)
 void Employee::SetAffiliation(Affiliation* af)
 {
   itsAffiliation = af;
+}
+
+void Employee::Payday(Paycheck& pc)
+{
+  double grossPay = itsClassification->CalculatePay(pc);
+  double deductions = itsAffiliation->CalculateDeduction(pc);
+  double netPay = grossPay - deductions;
+
+  pc.SetGrossPay(grossPay);
+  pc.SetDeductions(deductions);
+  pc.SetNetPay(netPay);
+
+  itsMethod->Pay(pc);
 }

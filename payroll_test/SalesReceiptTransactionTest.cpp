@@ -8,7 +8,7 @@
 
 TEST(Payroll, AddSalesReceipt)
 {
-  int empId = 5;
+  int empId = ++MAX_EMP_ID;
   AddCommissionedEmployee t(empId, "Bill", "Home", 1000, 3);
   t.Execute();
 

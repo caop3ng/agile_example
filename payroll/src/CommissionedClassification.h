@@ -11,12 +11,17 @@ class CommissionedClassification :
 public:
   CommissionedClassification(double salary, double commissionRate);
 
+  double CalculatePay(Paycheck&) const;
+
   double GetSalary() const;
   double GetCommissionRate() const;
   void AddSalesReceipts(SalesReceipt*);
   SalesReceipt* GetSalesReceipt(Date dt) const;
 
 private:
+
+  bool IsInPayPeriod(SalesReceipt*, Date endPeriod) const;
+
   double itsSalary{ -1 };
   double itsCommissionRate{ -1 };
 

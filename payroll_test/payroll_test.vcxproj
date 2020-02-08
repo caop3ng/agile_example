@@ -72,7 +72,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);E:\third_party\googletest-release-1.10.0\googletest\include;..\payroll\src;E:\third_party\boost_1_71_0</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);E:\third_party\vcpkg\installed\x64-windows-static\include;..\payroll\src</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
@@ -98,7 +98,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>E:\third_party\googletest-release-1.10.0\googletest\build\lib\Debug;E:\third_party\boost_1_71_0\stage\lib;</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>E:\third_party\vcpkg\installed\x64-windows-static\debug\lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>gtestd.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -162,8 +162,17 @@
     <ClCompile Include="..\payroll\src\AddSalariedEmployee.cpp" />
     <ClCompile Include="..\payroll\src\Affiliation.cpp" />
     <ClCompile Include="..\payroll\src\BiweeklySchedule.cpp" />
+    <ClCompile Include="..\payroll\src\ChangeAffiliationTransaction.cpp" />
+    <ClCompile Include="..\payroll\src\ChangeClassificationTransaction.cpp" />
+    <ClCompile Include="..\payroll\src\ChangeCommissionedTransaction.cpp" />
+    <ClCompile Include="..\payroll\src\ChangeDirectTransaction.cpp" />
     <ClCompile Include="..\payroll\src\ChangeEmployeeTransaction.cpp" />
+    <ClCompile Include="..\payroll\src\ChangeHourlyTransaction.cpp" />
+    <ClCompile Include="..\payroll\src\ChangeMemberTransaction.cpp" />
+    <ClCompile Include="..\payroll\src\ChangeMethodTransaction.cpp" />
     <ClCompile Include="..\payroll\src\ChangeNameTransaction.cpp" />
+    <ClCompile Include="..\payroll\src\ChangeSalariedTransaction.cpp" />
+    <ClCompile Include="..\payroll\src\ChangeUnaffiliationTransaction.cpp" />
     <ClCompile Include="..\payroll\src\CommissionedClassification.cpp" />
     <ClCompile Include="..\payroll\src\DeleteEmployeeTransaction.cpp" />
     <ClCompile Include="..\payroll\src\DirectMethod.cpp" />
@@ -172,6 +181,9 @@
     <ClCompile Include="..\payroll\src\HourlyClassification.cpp" />
     <ClCompile Include="..\payroll\src\MailMethod.cpp" />
     <ClCompile Include="..\payroll\src\MonthlySchedule.cpp" />
+    <ClCompile Include="..\payroll\src\NoAffiliation.cpp" />
+    <ClCompile Include="..\payroll\src\Paycheck.cpp" />
+    <ClCompile Include="..\payroll\src\PaydayTransaction.cpp" />
     <ClCompile Include="..\payroll\src\PaymentClassification.cpp" />
     <ClCompile Include="..\payroll\src\PaymentMethod.cpp" />
     <ClCompile Include="..\payroll\src\PaymentSchedule.cpp" />
@@ -190,8 +202,12 @@
     <ClCompile Include="AddHourlyEmployee_test.cpp" />
     <ClCompile Include="AddSalariedEmployee_test.cpp" />
     <ClCompile Include="AddServiceChargeTest.cpp" />
+    <ClCompile Include="ChangeAffiliationTest.cpp" />
+    <ClCompile Include="ChangeClassificationTest.cpp" />
+    <ClCompile Include="ChangeMethodTransactionTest.cpp" />
     <ClCompile Include="ChangeNameTransactionTest.cpp" />
     <ClCompile Include="DeleteEmployeeTest.cpp" />
+    <ClCompile Include="PaydayTest.cpp" />
     <ClCompile Include="payroll_test.cpp" />
     <ClCompile Include="SalesReceiptTransactionTest.cpp" />
     <ClCompile Include="TimeCardTransactionTest.cpp" />

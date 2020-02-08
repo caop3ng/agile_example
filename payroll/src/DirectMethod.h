@@ -3,5 +3,7 @@
 class DirectMethod :
   public PaymentMethod
 {
+public:
+  void Pay(Paycheck&) const;
 };
 

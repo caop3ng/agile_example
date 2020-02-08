@@ -5,6 +5,7 @@ class MonthlySchedule :
   public PaymentSchedule
 {
 public:
-  //~MonthlySchedule();
+  bool IsPayDate(Date) const;
+  Date GetPayPeriodStartDate(const Date& endDate) const;
 };
 

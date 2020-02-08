@@ -2,11 +2,14 @@
 
 #include <string>
 
+#include "../util/Date.h"
+
 class PaymentMethod;
 class Afiliation;
 class PaymentClassification;
 class PaymentSchedule;
 class Affiliation;
+class Paycheck;
 
 class Employee
 {
@@ -18,12 +21,16 @@ public:
   PaymentSchedule* GetSchedule() const;
   PaymentMethod* GetMethod() const;
   Affiliation* GetAffiliation() const;
+  bool IsPayDate(Date dt) const;
+  Date GetPayPeriodStartDate(Date payDate) const;
 
   void SetName(const std::string);
   void SetClassification(PaymentClassification*);
   void SetSchedule(PaymentSchedule*);
   void SetMethod(PaymentMethod*);
   void SetAffiliation(Affiliation*);
+
+  void Payday(Paycheck& pc);
 
 private:
   int itsEmpId;

@@ -57,6 +57,27 @@ Employee* PayrollDatabase::GetUnionMember(int memberId) const
   }
 }
 
+void PayrollDatabase::GetAllEmployeeIds(std::list<int>& l) const
+{
+  for (auto e : itsEmployees)
+  {
+    l.push_back(e.first);
+  }
+}
+
+void PayrollDatabase::RemoveUnionMember(int memberId)
+{
+  auto it = itsUnionMembers.find(memberId);
+  if (it != itsUnionMembers.end())
+  {
+    itsUnionMembers.erase(it);
+  }
+  else
+  {
+    //assert(0);
+  }
+}
+
 void PayrollDatabase::clear()
 {
   itsEmployees.clear();

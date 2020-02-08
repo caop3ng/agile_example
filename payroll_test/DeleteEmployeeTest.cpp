@@ -3,12 +3,13 @@
 #include "AddCommissionedEmployee.h"
 #include "PayrollDatabase.h"
 #include "DeleteEmployeeTransaction.h"
+#include "all_hearder.h"
 
 extern PayrollDatabase GpayrollDatabase;
 
-TEST(Payroll, DeleteEmployee)
+TEST(DeleteEmployee, DeleteEmployee)
 {
-  int empId = 3;
+  int empId = ++MAX_EMP_ID;
   AddCommissionedEmployee t(empId, "Lance", "Home", 2500, 3.2);
   t.Execute();
 

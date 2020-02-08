@@ -6,7 +6,7 @@
 
 TEST(Payroll, ChangeName)
 {
-  int empId = 7;
+  int empId = ++MAX_EMP_ID;
   AddHourlyEmployee t(empId, "Bill", "Home", 15.25);
   t.Execute();
 
