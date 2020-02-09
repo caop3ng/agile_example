@@ -7,6 +7,7 @@ class MonitoringScreen;
 class BrometricPressureObserver : public Observer
 {
 public:
+  BrometricPressureObserver(MonitoringScreen*);
   void update(double temp);
 
 private:

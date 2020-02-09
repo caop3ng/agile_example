@@ -1,10 +1,25 @@
 #include "BrometricPressureSensor.h"
 #include "Observer.h"
+#include "AlarmClock.h"
+#include "BrometricPressureSensorImp.h"
+#include "BrometricPressureAlarmListener.h"
+#include "StationToolkit.h"
 
-void BrometricPressureSensor::read()
+BrometricPressureSensor::BrometricPressureSensor(AlarmClock* ac, StationToolkit* st)
 {
-  auto bp = 100;
-  NotifyObservers(bp);
+  bpsi_ = st->MakeBrometricPressure();
+
+  ac->wakeEvery(1000, new BrometricPressureAlarmListener(this));
+}
+
+void BrometricPressureSensor::check()
+{
+  auto val = bpsi_->read();
+  if (val != last_reading_)
+  {
+    last_reading_ = val;
+    NotifyObservers(last_reading_);
+  }
 }
 
 void BrometricPressureSensor::NotifyObservers(double pb)

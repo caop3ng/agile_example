@@ -6,6 +6,7 @@ class TemperatureSensor;
 class TemperatureAlarmListener : public AlarmListener
 {
 public:
+  TemperatureAlarmListener(TemperatureSensor* ts);
   void weakup();
 
 private:

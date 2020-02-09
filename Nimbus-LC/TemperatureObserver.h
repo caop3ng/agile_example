@@ -7,6 +7,7 @@ class MonitoringScreen;
 class TemperatureObserver : public Observer
 {
 public:
+  TemperatureObserver(MonitoringScreen*);
   void update(double temp);
 
 private:

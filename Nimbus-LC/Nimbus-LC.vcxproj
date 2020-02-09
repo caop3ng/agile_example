@@ -149,29 +149,46 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BrometricPressureAlarmListener.cpp" />
     <ClCompile Include="BrometricPressureObserver.cpp" />
     <ClCompile Include="BrometricPressureSensor.cpp" />
     <ClCompile Include="MonitoringScreen.cpp" />
-    <ClCompile Include="Nimbus-LC.cpp" />
-    <ClCompile Include="Nimbus1_0Scheduler.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Nimbus1_0AlarmClock.cpp" />
+    <ClCompile Include="Nimbus1_0BrometricPressureSensor.cpp" />
+    <ClCompile Include="Nimbus1_0StationToolkit.cpp" />
+    <ClCompile Include="Nimbus1_0TemperatureSensor.cpp" />
     <ClCompile Include="Observable.cpp" />
     <ClCompile Include="AlarmClock.cpp" />
     <ClCompile Include="TemperatureAlarmListener.cpp" />
     <ClCompile Include="TemperatureObserver.cpp" />
     <ClCompile Include="TemperatureSensor.cpp" />
+    <ClCompile Include="TestScreen.cpp" />
+    <ClCompile Include="Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AlarmClockImp.h" />
     <ClInclude Include="AlarmListener.h" />
+    <ClInclude Include="BrometricPressureAlarmListener.h" />
     <ClInclude Include="BrometricPressureObserver.h" />
     <ClInclude Include="BrometricPressureSensor.h" />
+    <ClInclude Include="BrometricPressureSensorImp.h" />
+    <ClInclude Include="ClockListener.h" />
     <ClInclude Include="MonitoringScreen.h" />
-    <ClInclude Include="Nimus1_0Scheduler.h" />
+    <ClInclude Include="Nimbus1_0AlarmClock.h" />
+    <ClInclude Include="Nimbus1_0BrometricPressureSensor.h" />
+    <ClInclude Include="Nimbus1_0StationToolkit.h" />
+    <ClInclude Include="Nimbus1_0TemperatureSensor.h" />
     <ClInclude Include="Observable.h" />
     <ClInclude Include="Observer.h" />
     <ClInclude Include="AlarmClock.h" />
+    <ClInclude Include="StationToolkit.h" />
     <ClInclude Include="TemperatureObserver.h" />
     <ClInclude Include="TemperatureSensor.h" />
     <ClInclude Include="TemperatureAlarmListener.h" />
+    <ClInclude Include="TemperatureSensorImp.h" />
+    <ClInclude Include="TestScreen.h" />
+    <ClInclude Include="Timer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

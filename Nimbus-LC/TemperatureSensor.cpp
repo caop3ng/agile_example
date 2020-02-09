@@ -2,17 +2,25 @@
 #include "Observer.h"
 #include "AlarmClock.h"
 #include "TemperatureAlarmListener.h"
+#include "TemperatureSensorImp.h"
+#include "StationToolkit.h"
 
-TemperatureSensor::TemperatureSensor(AlarmClock* ac)
+TemperatureSensor::TemperatureSensor(AlarmClock* ac, StationToolkit* st)
 {
-  ac->wakeEvery(50, new TemperatureAlarmListener());
+  tsi_ = st->MakeTemperature();
+
+  ac->wakeEvery(500, new TemperatureAlarmListener(this));
 }
 
-double TemperatureSensor::read()
+void TemperatureSensor::check()
 {
-  double temp = 20.5;
-  NotifyObservers(temp);
-  return temp;
+  double val = tsi_->read();
+
+  if (val != last_reading_)
+  {
+    last_reading_ = val;
+    NotifyObservers(last_reading_);
+  }
 }
 
 void TemperatureSensor::NotifyObservers(double temp)

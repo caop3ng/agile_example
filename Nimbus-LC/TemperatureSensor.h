@@ -5,13 +5,19 @@
 
 class Observer;
 class AlarmClock;
+class TemperatureSensorImp;
+class StationToolkit;
 
 class TemperatureSensor : public Observable
 {
 public:
-  TemperatureSensor(AlarmClock*);
+  TemperatureSensor(AlarmClock*, StationToolkit* st);
 
-  virtual double read();
+  void check();
 
   void NotifyObservers(double);
+
+private:
+  double last_reading_{ 0 };
+  TemperatureSensorImp* tsi_;
 };

@@ -1,11 +1,30 @@
 #pragma once
+#include <vector>
+#include <tuple>
+#include <mutex>
+#include "ClockListener.h"
 
 class AlarmListener;
+class AlarmClockImp;
+class StationToolkit;
 
-class AlarmClock
+class AlarmClock : public ClockListener
 {
 public:
-  virtual void tic();
-  void wakeEvery(int interval, AlarmListener*);
+  AlarmClock(StationToolkit* st);
+  void tic() final;
+  void wakeEvery(int ms, AlarmListener*);
 
+private:
+  AlarmClockImp* aci_;
+
+  struct Listener
+  {
+    int ms;
+    int tic_count;
+    AlarmListener* al;
+  };
+
+  std::vector<Listener> listeners_;
+  std::mutex m_;
 };

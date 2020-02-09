@@ -7,12 +7,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Nimbus-LC.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="Nimbus1_0Scheduler.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="TemperatureSensor.cpp">
       <Filter>src</Filter>
     </ClCompile>
@@ -37,12 +31,33 @@
     <ClCompile Include="TemperatureAlarmListener.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="Nimbus1_0TemperatureSensor.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="Nimbus1_0BrometricPressureSensor.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="Nimbus1_0AlarmClock.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="BrometricPressureAlarmListener.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="TestScreen.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="Nimbus1_0StationToolkit.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TemperatureSensor.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="Nimus1_0Scheduler.h">
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="MonitoringScreen.h">
@@ -70,6 +85,42 @@
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="TemperatureAlarmListener.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="Nimbus1_0TemperatureSensor.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="TemperatureSensorImp.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="BrometricPressureSensorImp.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="Nimbus1_0BrometricPressureSensor.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="AlarmClockImp.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="Nimbus1_0AlarmClock.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="ClockListener.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="BrometricPressureAlarmListener.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="TestScreen.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="StationToolkit.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="Nimbus1_0StationToolkit.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
