@@ -1,12 +1,12 @@
 #pragma once
 
-class Observable;
+class WeatherStationComponent;
 
 class MonitoringScreen
 {
 public:
 
-  MonitoringScreen(Observable* obs_temp, Observable* obs_bp, Observable* obs_trend);
+  MonitoringScreen(WeatherStationComponent* wsc);
   virtual void displayTemp(double) = 0;
   virtual void displayPressure(double) = 0;
   virtual void displayPressureTrend(double) = 0;

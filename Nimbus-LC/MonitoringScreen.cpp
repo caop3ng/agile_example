@@ -2,9 +2,11 @@
 #include "Observable.h"
 #include "TemperatureObserver.h"
 #include "BrometricPressureObserver.h"
+#include "WeatherStation.h"
+#include "WeatherStationComponent.h"
 
-MonitoringScreen::MonitoringScreen(Observable* obs_temp, Observable* obs_bp, Observable* obs_trend)
+MonitoringScreen::MonitoringScreen(WeatherStationComponent* wsc)
 {
-  obs_temp->AddObserver(new TemperatureObserver(this));
-  obs_bp->AddObserver(new BrometricPressureObserver(this));
+  wsc->AddTempObserver(new TemperatureObserver(this));
+  wsc->AddBPObserver(new BrometricPressureObserver(this));
 }

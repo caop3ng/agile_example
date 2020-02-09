@@ -5,123 +5,147 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
+    <Filter Include="src\Nimbus1_0">
+      <UniqueIdentifier>{3c681c53-f468-47e2-94bd-394351f42986}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\api">
+      <UniqueIdentifier>{009244d1-6fe6-43ed-b94f-e1d5ac238a7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\system">
+      <UniqueIdentifier>{3b9443c9-83ad-442e-bd8f-fd73d52c8484}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui">
+      <UniqueIdentifier>{a08f6c7d-7102-48e3-ae61-625ad6237e9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\WeatherStationComponent">
+      <UniqueIdentifier>{7db9bf37-09e5-46d4-b6c6-f1dd1bed8092}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="TemperatureSensor.cpp">
-      <Filter>src</Filter>
+    <ClCompile Include="Nimbus1_0AlarmClock.cpp">
+      <Filter>src\Nimbus1_0</Filter>
     </ClCompile>
-    <ClCompile Include="TemperatureObserver.cpp">
-      <Filter>src</Filter>
+    <ClCompile Include="Nimbus1_0BrometricPressureSensor.cpp">
+      <Filter>src\Nimbus1_0</Filter>
     </ClCompile>
-    <ClCompile Include="MonitoringScreen.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="BrometricPressureSensor.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="Observable.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="BrometricPressureObserver.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="AlarmClock.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="TemperatureAlarmListener.cpp">
-      <Filter>src</Filter>
+    <ClCompile Include="Nimbus1_0StationToolkit.cpp">
+      <Filter>src\Nimbus1_0</Filter>
     </ClCompile>
     <ClCompile Include="Nimbus1_0TemperatureSensor.cpp">
-      <Filter>src</Filter>
+      <Filter>src\Nimbus1_0</Filter>
+    </ClCompile>
+    <ClCompile Include="TemperatureSensor.cpp">
+      <Filter>src\system</Filter>
+    </ClCompile>
+    <ClCompile Include="TemperatureAlarmListener.cpp">
+      <Filter>src\system</Filter>
+    </ClCompile>
+    <ClCompile Include="AlarmClock.cpp">
+      <Filter>src\system</Filter>
+    </ClCompile>
+    <ClCompile Include="BrometricPressureAlarmListener.cpp">
+      <Filter>src\system</Filter>
+    </ClCompile>
+    <ClCompile Include="BrometricPressureSensor.cpp">
+      <Filter>src\system</Filter>
+    </ClCompile>
+    <ClCompile Include="Observable.cpp">
+      <Filter>src\system</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>src\system</Filter>
+    </ClCompile>
+    <ClCompile Include="WeatherStation.cpp">
+      <Filter>src\system</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="Nimbus1_0BrometricPressureSensor.cpp">
-      <Filter>src</Filter>
+    <ClCompile Include="MonitoringScreen.cpp">
+      <Filter>src\ui</Filter>
     </ClCompile>
-    <ClCompile Include="Nimbus1_0AlarmClock.cpp">
-      <Filter>src</Filter>
+    <ClCompile Include="TemperatureObserver.cpp">
+      <Filter>src\ui</Filter>
     </ClCompile>
-    <ClCompile Include="Timer.cpp">
-      <Filter>src</Filter>
+    <ClCompile Include="BrometricPressureObserver.cpp">
+      <Filter>src\ui</Filter>
     </ClCompile>
-    <ClCompile Include="BrometricPressureAlarmListener.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="TestScreen.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="Nimbus1_0StationToolkit.cpp">
-      <Filter>src</Filter>
+    <ClCompile Include="Nimbus1_0MonitorScreen.cpp">
+      <Filter>src\Nimbus1_0</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="TemperatureSensor.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="MonitoringScreen.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="Observable.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="Observer.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="TemperatureObserver.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="BrometricPressureSensor.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="BrometricPressureObserver.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="AlarmClock.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="AlarmListener.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="TemperatureAlarmListener.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="Nimbus1_0TemperatureSensor.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="TemperatureSensorImp.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="BrometricPressureSensorImp.h">
-      <Filter>src</Filter>
+    <ClInclude Include="Nimbus1_0AlarmClock.h">
+      <Filter>src\Nimbus1_0</Filter>
     </ClInclude>
     <ClInclude Include="Nimbus1_0BrometricPressureSensor.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="AlarmClockImp.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="Nimbus1_0AlarmClock.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="Timer.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="ClockListener.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="BrometricPressureAlarmListener.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="TestScreen.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="StationToolkit.h">
-      <Filter>src</Filter>
+      <Filter>src\Nimbus1_0</Filter>
     </ClInclude>
     <ClInclude Include="Nimbus1_0StationToolkit.h">
-      <Filter>src</Filter>
+      <Filter>src\Nimbus1_0</Filter>
+    </ClInclude>
+    <ClInclude Include="Nimbus1_0TemperatureSensor.h">
+      <Filter>src\Nimbus1_0</Filter>
+    </ClInclude>
+    <ClInclude Include="TemperatureSensorImp.h">
+      <Filter>src\api</Filter>
+    </ClInclude>
+    <ClInclude Include="BrometricPressureSensorImp.h">
+      <Filter>src\api</Filter>
+    </ClInclude>
+    <ClInclude Include="AlarmClockImp.h">
+      <Filter>src\api</Filter>
+    </ClInclude>
+    <ClInclude Include="StationToolkit.h">
+      <Filter>src\api</Filter>
+    </ClInclude>
+    <ClInclude Include="ClockListener.h">
+      <Filter>src\api</Filter>
+    </ClInclude>
+    <ClInclude Include="TemperatureSensor.h">
+      <Filter>src\system</Filter>
+    </ClInclude>
+    <ClInclude Include="TemperatureAlarmListener.h">
+      <Filter>src\system</Filter>
+    </ClInclude>
+    <ClInclude Include="AlarmClock.h">
+      <Filter>src\system</Filter>
+    </ClInclude>
+    <ClInclude Include="AlarmListener.h">
+      <Filter>src\system</Filter>
+    </ClInclude>
+    <ClInclude Include="BrometricPressureAlarmListener.h">
+      <Filter>src\system</Filter>
+    </ClInclude>
+    <ClInclude Include="BrometricPressureSensor.h">
+      <Filter>src\system</Filter>
+    </ClInclude>
+    <ClInclude Include="Observable.h">
+      <Filter>src\system</Filter>
+    </ClInclude>
+    <ClInclude Include="Observer.h">
+      <Filter>src\system</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>src\system</Filter>
+    </ClInclude>
+    <ClInclude Include="MonitoringScreen.h">
+      <Filter>src\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="WeatherStation.h">
+      <Filter>src\system</Filter>
+    </ClInclude>
+    <ClInclude Include="TemperatureObserver.h">
+      <Filter>src\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="BrometricPressureObserver.h">
+      <Filter>src\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="Nimbus1_0MonitorScreen.h">
+      <Filter>src\Nimbus1_0</Filter>
+    </ClInclude>
+    <ClInclude Include="WeatherStationComponent.h">
+      <Filter>src\WeatherStationComponent</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

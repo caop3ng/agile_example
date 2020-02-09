@@ -1,10 +1,10 @@
 #pragma once
 #include "MonitoringScreen.h"
 
-class TestScreen : public MonitoringScreen
+class Nimbus1_0MonitorScreen : public MonitoringScreen
 {
 public:
-  TestScreen(Observable* obs_temp, Observable* obs_bp, Observable* obs_trend);
+  Nimbus1_0MonitorScreen(WeatherStationComponent*);
 
   void displayTemp(double) final;
   void displayPressure(double) final;
