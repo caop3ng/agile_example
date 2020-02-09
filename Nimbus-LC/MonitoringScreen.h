@@ -7,7 +7,6 @@ class MonitoringScreen
 public:
 
   MonitoringScreen(WeatherStationComponent* wsc);
-  virtual void displayTemp(double) = 0;
-  virtual void displayPressure(double) = 0;
-  virtual void displayPressureTrend(double) = 0;
+  void displayTemp(double);
+  void displayPressure(double);
 };

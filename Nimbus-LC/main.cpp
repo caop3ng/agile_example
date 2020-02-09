@@ -10,16 +10,16 @@
 #include "Nimbus1_0TemperatureSensor.h"
 #include "BrometricPressureSensor.h"
 #include "Nimbus1_0BrometricPressureSensor.h"
-#include "Nimbus1_0MonitorScreen.h"
 #include "StationToolkit.h"
 #include "Nimbus1_0StationToolkit.h"
 #include "WeatherStation.h"
+#include "MonitoringScreen.h"
 
 int main()
 {
   StationToolkit* st = new Nimbus1_0StationToolkit();
   WeatherStationComponent* wsc = new WeatherStation(st);
-  MonitoringScreen* ms = new Nimbus1_0MonitorScreen(wsc);
+  MonitoringScreen* ms = new MonitoringScreen(wsc);
 
   while (1)
   {

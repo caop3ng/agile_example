@@ -163,7 +163,6 @@
     <ClCompile Include="TemperatureAlarmListener.cpp" />
     <ClCompile Include="TemperatureObserver.cpp" />
     <ClCompile Include="TemperatureSensor.cpp" />
-    <ClCompile Include="Nimbus1_0MonitorScreen.cpp" />
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="WeatherStation.cpp" />
   </ItemGroup>
@@ -188,7 +187,6 @@
     <ClInclude Include="TemperatureSensor.h" />
     <ClInclude Include="TemperatureAlarmListener.h" />
     <ClInclude Include="TemperatureSensorImp.h" />
-    <ClInclude Include="Nimbus1_0MonitorScreen.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="WeatherStation.h" />
     <ClInclude Include="WeatherStationComponent.h" />

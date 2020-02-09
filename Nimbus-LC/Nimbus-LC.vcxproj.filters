@@ -70,9 +70,6 @@
     <ClCompile Include="BrometricPressureObserver.cpp">
       <Filter>src\ui</Filter>
     </ClCompile>
-    <ClCompile Include="Nimbus1_0MonitorScreen.cpp">
-      <Filter>src\Nimbus1_0</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Nimbus1_0AlarmClock.h">
@@ -140,9 +137,6 @@
     </ClInclude>
     <ClInclude Include="BrometricPressureObserver.h">
       <Filter>src\ui</Filter>
-    </ClInclude>
-    <ClInclude Include="Nimbus1_0MonitorScreen.h">
-      <Filter>src\Nimbus1_0</Filter>
     </ClInclude>
     <ClInclude Include="WeatherStationComponent.h">
       <Filter>src\WeatherStationComponent</Filter>
