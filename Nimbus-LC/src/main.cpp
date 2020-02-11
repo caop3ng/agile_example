@@ -5,17 +5,9 @@
 #include <thread>
 
 #include "api/StationToolkit.h"
-
-#include "system/AlarmClock.h"
-#include "system/WeatherStation.h"
-#include "system/TemperatureSensor.h"
-#include "system/BrometricPressureSensor.h"
-
-#include "Nimbus1_0/Nimbus1_0AlarmClock.h"
-#include "Nimbus1_0/Nimbus1_0TemperatureSensor.h"
-#include "Nimbus1_0/Nimbus1_0BrometricPressureSensor.h"
 #include "Nimbus1_0/Nimbus1_0StationToolkit.h"
 
+#include "system/WeatherStation.h"
 #include "ui/MonitoringScreen.h"
 #include "persistence/DataToolkitImp.h"
 
