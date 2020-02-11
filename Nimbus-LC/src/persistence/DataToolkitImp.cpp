@@ -1,5 +1,5 @@
 #include "DataToolkitImp.h"
-#include "HiLoDataImp.h"
+#include "../wmsdata_imp/HiLoDataImp.h"
 #include "HiLoDataProxy.h"
 
 DataToolkitImp::DataToolkitImp(StationToolkit* st)

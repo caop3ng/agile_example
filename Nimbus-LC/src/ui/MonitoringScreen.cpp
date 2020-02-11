@@ -1,10 +1,9 @@
 #include <iostream>
 #include "MonitoringScreen.h"
-#include "Observable.h"
-#include "TemperatureObserver.h"
-#include "BrometricPressureObserver.h"
-#include "WeatherStation.h"
-#include "WeatherStationComponent.h"
+#include "../system/TemperatureObserver.h"
+#include "../system/BrometricPressureObserver.h"
+#include "../system/WeatherStation.h"
+#include "../ws_component/WeatherStationComponent.h"
 
 using namespace std;
 

@@ -1,205 +1,62 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="src">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="src\Nimbus1_0">
-      <UniqueIdentifier>{3c681c53-f468-47e2-94bd-394351f42986}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\api">
-      <UniqueIdentifier>{009244d1-6fe6-43ed-b94f-e1d5ac238a7f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\system">
-      <UniqueIdentifier>{3b9443c9-83ad-442e-bd8f-fd73d52c8484}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\ui">
-      <UniqueIdentifier>{a08f6c7d-7102-48e3-ae61-625ad6237e9f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\WeatherStationComponent">
-      <UniqueIdentifier>{7db9bf37-09e5-46d4-b6c6-f1dd1bed8092}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\util">
-      <UniqueIdentifier>{5f4c0e6e-106d-4b12-bd55-7b9b3cf15954}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\wsmdata">
-      <UniqueIdentifier>{b8d1b3ac-4c04-44ec-b3de-e8ac55ad463d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\wsmdata_imp">
-      <UniqueIdentifier>{5fd341b5-3500-4683-a791-f5dc6f5effe6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\persistence">
-      <UniqueIdentifier>{41176fc9-6c75-4769-ac52-147bf8577fa7}</UniqueIdentifier>
-    </Filter>
+    <ClInclude Include="src\api\AlarmClockImp.h" />
+    <ClInclude Include="src\api\BrometricPressureSensorImp.h" />
+    <ClInclude Include="src\api\ClockListener.h" />
+    <ClInclude Include="src\api\PersistentImp.h" />
+    <ClInclude Include="src\api\Serializable.h" />
+    <ClInclude Include="src\api\StationToolkit.h" />
+    <ClInclude Include="src\api\TemperatureSensorImp.h" />
+    <ClInclude Include="src\nimbus1_0\Nimbus1_0AlarmClock.h" />
+    <ClInclude Include="src\nimbus1_0\Nimbus1_0BrometricPressureSensor.h" />
+    <ClInclude Include="src\nimbus1_0\Nimbus1_0Persistent.h" />
+    <ClInclude Include="src\nimbus1_0\Nimbus1_0StationToolkit.h" />
+    <ClInclude Include="src\nimbus1_0\Nimbus1_0TemperatureSensor.h" />
+    <ClInclude Include="src\persistence\DataToolkitImp.h" />
+    <ClInclude Include="src\persistence\HiLoDataProxy.h" />
+    <ClInclude Include="src\system\AlarmClock.h" />
+    <ClInclude Include="src\system\AlarmListener.h" />
+    <ClInclude Include="src\system\BrometricPressureAlarmListener.h" />
+    <ClInclude Include="src\system\BrometricPressureObserver.h" />
+    <ClInclude Include="src\system\BrometricPressureSensor.h" />
+    <ClInclude Include="src\system\Observable.h" />
+    <ClInclude Include="src\system\Observer.h" />
+    <ClInclude Include="src\system\TemperatureAlarmListener.h" />
+    <ClInclude Include="src\system\TemperatureHiLo.h" />
+    <ClInclude Include="src\system\TemperatureObserver.h" />
+    <ClInclude Include="src\system\TemperatureSensor.h" />
+    <ClInclude Include="src\system\WeatherStation.h" />
+    <ClInclude Include="src\ui\MonitoringScreen.h" />
+    <ClInclude Include="src\util\Date.h" />
+    <ClInclude Include="src\util\Timer.h" />
+    <ClInclude Include="src\wmsdata\DataToolkit.h" />
+    <ClInclude Include="src\wmsdata\HiLoData.h" />
+    <ClInclude Include="src\wmsdata_imp\HiLoDataImp.h" />
+    <ClInclude Include="src\ws_component\WeatherStationComponent.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Nimbus1_0AlarmClock.cpp">
-      <Filter>src\Nimbus1_0</Filter>
-    </ClCompile>
-    <ClCompile Include="Nimbus1_0BrometricPressureSensor.cpp">
-      <Filter>src\Nimbus1_0</Filter>
-    </ClCompile>
-    <ClCompile Include="Nimbus1_0StationToolkit.cpp">
-      <Filter>src\Nimbus1_0</Filter>
-    </ClCompile>
-    <ClCompile Include="Nimbus1_0TemperatureSensor.cpp">
-      <Filter>src\Nimbus1_0</Filter>
-    </ClCompile>
-    <ClCompile Include="TemperatureSensor.cpp">
-      <Filter>src\system</Filter>
-    </ClCompile>
-    <ClCompile Include="TemperatureAlarmListener.cpp">
-      <Filter>src\system</Filter>
-    </ClCompile>
-    <ClCompile Include="AlarmClock.cpp">
-      <Filter>src\system</Filter>
-    </ClCompile>
-    <ClCompile Include="BrometricPressureAlarmListener.cpp">
-      <Filter>src\system</Filter>
-    </ClCompile>
-    <ClCompile Include="BrometricPressureSensor.cpp">
-      <Filter>src\system</Filter>
-    </ClCompile>
-    <ClCompile Include="Observable.cpp">
-      <Filter>src\system</Filter>
-    </ClCompile>
-    <ClCompile Include="Timer.cpp">
-      <Filter>src\system</Filter>
-    </ClCompile>
-    <ClCompile Include="WeatherStation.cpp">
-      <Filter>src\system</Filter>
-    </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="MonitoringScreen.cpp">
-      <Filter>src\ui</Filter>
-    </ClCompile>
-    <ClCompile Include="TemperatureObserver.cpp">
-      <Filter>src\ui</Filter>
-    </ClCompile>
-    <ClCompile Include="BrometricPressureObserver.cpp">
-      <Filter>src\ui</Filter>
-    </ClCompile>
-    <ClCompile Include="Date.cpp">
-      <Filter>src\util</Filter>
-    </ClCompile>
-    <ClCompile Include="TemperatureHiLo.cpp">
-      <Filter>src\system</Filter>
-    </ClCompile>
-    <ClCompile Include="Nimbus1_0Persistent.cpp">
-      <Filter>src\Nimbus1_0</Filter>
-    </ClCompile>
-    <ClCompile Include="HiLoDataImp.cpp">
-      <Filter>src\wsmdata_imp</Filter>
-    </ClCompile>
-    <ClCompile Include="DataToolkitImp.cpp">
-      <Filter>src\persistence</Filter>
-    </ClCompile>
-    <ClCompile Include="HiLoDataProxy.cpp">
-      <Filter>src\persistence</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Nimbus1_0AlarmClock.h">
-      <Filter>src\Nimbus1_0</Filter>
-    </ClInclude>
-    <ClInclude Include="Nimbus1_0BrometricPressureSensor.h">
-      <Filter>src\Nimbus1_0</Filter>
-    </ClInclude>
-    <ClInclude Include="Nimbus1_0StationToolkit.h">
-      <Filter>src\Nimbus1_0</Filter>
-    </ClInclude>
-    <ClInclude Include="Nimbus1_0TemperatureSensor.h">
-      <Filter>src\Nimbus1_0</Filter>
-    </ClInclude>
-    <ClInclude Include="TemperatureSensorImp.h">
-      <Filter>src\api</Filter>
-    </ClInclude>
-    <ClInclude Include="BrometricPressureSensorImp.h">
-      <Filter>src\api</Filter>
-    </ClInclude>
-    <ClInclude Include="AlarmClockImp.h">
-      <Filter>src\api</Filter>
-    </ClInclude>
-    <ClInclude Include="StationToolkit.h">
-      <Filter>src\api</Filter>
-    </ClInclude>
-    <ClInclude Include="ClockListener.h">
-      <Filter>src\api</Filter>
-    </ClInclude>
-    <ClInclude Include="TemperatureSensor.h">
-      <Filter>src\system</Filter>
-    </ClInclude>
-    <ClInclude Include="TemperatureAlarmListener.h">
-      <Filter>src\system</Filter>
-    </ClInclude>
-    <ClInclude Include="AlarmClock.h">
-      <Filter>src\system</Filter>
-    </ClInclude>
-    <ClInclude Include="AlarmListener.h">
-      <Filter>src\system</Filter>
-    </ClInclude>
-    <ClInclude Include="BrometricPressureAlarmListener.h">
-      <Filter>src\system</Filter>
-    </ClInclude>
-    <ClInclude Include="BrometricPressureSensor.h">
-      <Filter>src\system</Filter>
-    </ClInclude>
-    <ClInclude Include="Observable.h">
-      <Filter>src\system</Filter>
-    </ClInclude>
-    <ClInclude Include="Observer.h">
-      <Filter>src\system</Filter>
-    </ClInclude>
-    <ClInclude Include="Timer.h">
-      <Filter>src\system</Filter>
-    </ClInclude>
-    <ClInclude Include="MonitoringScreen.h">
-      <Filter>src\ui</Filter>
-    </ClInclude>
-    <ClInclude Include="WeatherStation.h">
-      <Filter>src\system</Filter>
-    </ClInclude>
-    <ClInclude Include="TemperatureObserver.h">
-      <Filter>src\ui</Filter>
-    </ClInclude>
-    <ClInclude Include="BrometricPressureObserver.h">
-      <Filter>src\ui</Filter>
-    </ClInclude>
-    <ClInclude Include="WeatherStationComponent.h">
-      <Filter>src\WeatherStationComponent</Filter>
-    </ClInclude>
-    <ClInclude Include="PersistentImp.h">
-      <Filter>src\api</Filter>
-    </ClInclude>
-    <ClInclude Include="Serializable.h">
-      <Filter>src\api</Filter>
-    </ClInclude>
-    <ClInclude Include="Date.h">
-      <Filter>src\util</Filter>
-    </ClInclude>
-    <ClInclude Include="TemperatureHiLo.h">
-      <Filter>src\system</Filter>
-    </ClInclude>
-    <ClInclude Include="Nimbus1_0Persistent.h">
-      <Filter>src\Nimbus1_0</Filter>
-    </ClInclude>
-    <ClInclude Include="HiLoData.h">
-      <Filter>src\wsmdata</Filter>
-    </ClInclude>
-    <ClInclude Include="DataToolkit.h">
-      <Filter>src\wsmdata</Filter>
-    </ClInclude>
-    <ClInclude Include="HiLoDataImp.h">
-      <Filter>src\wsmdata_imp</Filter>
-    </ClInclude>
-    <ClInclude Include="DataToolkitImp.h">
-      <Filter>src\persistence</Filter>
-    </ClInclude>
-    <ClInclude Include="HiLoDataProxy.h">
-      <Filter>src\persistence</Filter>
-    </ClInclude>
+    <ClCompile Include="src\nimbus1_0\Nimbus1_0AlarmClock.cpp" />
+    <ClCompile Include="src\nimbus1_0\Nimbus1_0BrometricPressureSensor.cpp" />
+    <ClCompile Include="src\nimbus1_0\Nimbus1_0Persistent.cpp" />
+    <ClCompile Include="src\nimbus1_0\Nimbus1_0StationToolkit.cpp" />
+    <ClCompile Include="src\nimbus1_0\Nimbus1_0TemperatureSensor.cpp" />
+    <ClCompile Include="src\persistence\DataToolkitImp.cpp" />
+    <ClCompile Include="src\persistence\HiLoDataProxy.cpp" />
+    <ClCompile Include="src\system\AlarmClock.cpp" />
+    <ClCompile Include="src\system\BrometricPressureAlarmListener.cpp" />
+    <ClCompile Include="src\system\BrometricPressureObserver.cpp" />
+    <ClCompile Include="src\system\BrometricPressureSensor.cpp" />
+    <ClCompile Include="src\system\Observable.cpp" />
+    <ClCompile Include="src\system\TemperatureAlarmListener.cpp" />
+    <ClCompile Include="src\system\TemperatureHiLo.cpp" />
+    <ClCompile Include="src\system\TemperatureObserver.cpp" />
+    <ClCompile Include="src\system\TemperatureSensor.cpp" />
+    <ClCompile Include="src\system\WeatherStation.cpp" />
+    <ClCompile Include="src\ui\MonitoringScreen.cpp" />
+    <ClCompile Include="src\util\Date.cpp" />
+    <ClCompile Include="src\util\Timer.cpp" />
+    <ClCompile Include="src\wmsdata_imp\HiLoDataImp.cpp" />
+    <ClCompile Include="src\main.cpp" />
   </ItemGroup>
 </Project>

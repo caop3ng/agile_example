@@ -1,9 +1,9 @@
 #include "TemperatureHiLo.h"
 #include "AlarmClock.h"
-#include "StationToolkit.h"
-#include "DataToolkit.h"
+#include "../api/StationToolkit.h"
+#include "../wmsdata/DataToolkit.h"
 #include "WeatherStation.h"
-#include "HiLoData.h"
+#include "../wmsdata/HiLoData.h"
 #include "TemperatureSensor.h"
 
 TemperatureHiLo::TemperatureHiLo(AlarmClock* ac, StationToolkit* st, TemperatureSensor* ts, DataToolkit* dt)

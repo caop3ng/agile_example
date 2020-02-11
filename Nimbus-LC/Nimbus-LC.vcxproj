@@ -18,6 +18,65 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\api\AlarmClockImp.h" />
+    <ClInclude Include="src\api\BrometricPressureSensorImp.h" />
+    <ClInclude Include="src\api\ClockListener.h" />
+    <ClInclude Include="src\api\PersistentImp.h" />
+    <ClInclude Include="src\api\Serializable.h" />
+    <ClInclude Include="src\api\StationToolkit.h" />
+    <ClInclude Include="src\api\TemperatureSensorImp.h" />
+    <ClInclude Include="src\nimbus1_0\Nimbus1_0AlarmClock.h" />
+    <ClInclude Include="src\nimbus1_0\Nimbus1_0BrometricPressureSensor.h" />
+    <ClInclude Include="src\nimbus1_0\Nimbus1_0Persistent.h" />
+    <ClInclude Include="src\nimbus1_0\Nimbus1_0StationToolkit.h" />
+    <ClInclude Include="src\nimbus1_0\Nimbus1_0TemperatureSensor.h" />
+    <ClInclude Include="src\persistence\DataToolkitImp.h" />
+    <ClInclude Include="src\persistence\HiLoDataProxy.h" />
+    <ClInclude Include="src\system\AlarmClock.h" />
+    <ClInclude Include="src\system\AlarmListener.h" />
+    <ClInclude Include="src\system\BrometricPressureAlarmListener.h" />
+    <ClInclude Include="src\system\BrometricPressureObserver.h" />
+    <ClInclude Include="src\system\BrometricPressureSensor.h" />
+    <ClInclude Include="src\system\Observable.h" />
+    <ClInclude Include="src\system\Observer.h" />
+    <ClInclude Include="src\system\TemperatureAlarmListener.h" />
+    <ClInclude Include="src\system\TemperatureHiLo.h" />
+    <ClInclude Include="src\system\TemperatureObserver.h" />
+    <ClInclude Include="src\system\TemperatureSensor.h" />
+    <ClInclude Include="src\system\WeatherStation.h" />
+    <ClInclude Include="src\ui\MonitoringScreen.h" />
+    <ClInclude Include="src\util\Date.h" />
+    <ClInclude Include="src\util\Timer.h" />
+    <ClInclude Include="src\wmsdata\DataToolkit.h" />
+    <ClInclude Include="src\wmsdata\HiLoData.h" />
+    <ClInclude Include="src\wmsdata_imp\HiLoDataImp.h" />
+    <ClInclude Include="src\ws_component\WeatherStationComponent.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\nimbus1_0\Nimbus1_0AlarmClock.cpp" />
+    <ClCompile Include="src\nimbus1_0\Nimbus1_0BrometricPressureSensor.cpp" />
+    <ClCompile Include="src\nimbus1_0\Nimbus1_0Persistent.cpp" />
+    <ClCompile Include="src\nimbus1_0\Nimbus1_0StationToolkit.cpp" />
+    <ClCompile Include="src\nimbus1_0\Nimbus1_0TemperatureSensor.cpp" />
+    <ClCompile Include="src\persistence\DataToolkitImp.cpp" />
+    <ClCompile Include="src\persistence\HiLoDataProxy.cpp" />
+    <ClCompile Include="src\system\AlarmClock.cpp" />
+    <ClCompile Include="src\system\BrometricPressureAlarmListener.cpp" />
+    <ClCompile Include="src\system\BrometricPressureObserver.cpp" />
+    <ClCompile Include="src\system\BrometricPressureSensor.cpp" />
+    <ClCompile Include="src\system\Observable.cpp" />
+    <ClCompile Include="src\system\TemperatureAlarmListener.cpp" />
+    <ClCompile Include="src\system\TemperatureHiLo.cpp" />
+    <ClCompile Include="src\system\TemperatureObserver.cpp" />
+    <ClCompile Include="src\system\TemperatureSensor.cpp" />
+    <ClCompile Include="src\system\WeatherStation.cpp" />
+    <ClCompile Include="src\ui\MonitoringScreen.cpp" />
+    <ClCompile Include="src\util\Date.cpp" />
+    <ClCompile Include="src\util\Timer.cpp" />
+    <ClCompile Include="src\wmsdata_imp\HiLoDataImp.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <ProjectGuid>{056A6263-3373-4222-9244-D42C1AD37F6A}</ProjectGuid>
@@ -148,65 +207,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="BrometricPressureAlarmListener.cpp" />
-    <ClCompile Include="BrometricPressureObserver.cpp" />
-    <ClCompile Include="BrometricPressureSensor.cpp" />
-    <ClCompile Include="DataToolkitImp.cpp" />
-    <ClCompile Include="Date.cpp" />
-    <ClCompile Include="HiLoDataImp.cpp" />
-    <ClCompile Include="HiLoDataProxy.cpp" />
-    <ClCompile Include="MonitoringScreen.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="Nimbus1_0AlarmClock.cpp" />
-    <ClCompile Include="Nimbus1_0BrometricPressureSensor.cpp" />
-    <ClCompile Include="Nimbus1_0Persistent.cpp" />
-    <ClCompile Include="Nimbus1_0StationToolkit.cpp" />
-    <ClCompile Include="Nimbus1_0TemperatureSensor.cpp" />
-    <ClCompile Include="Observable.cpp" />
-    <ClCompile Include="AlarmClock.cpp" />
-    <ClCompile Include="TemperatureAlarmListener.cpp" />
-    <ClCompile Include="TemperatureHiLo.cpp" />
-    <ClCompile Include="TemperatureObserver.cpp" />
-    <ClCompile Include="TemperatureSensor.cpp" />
-    <ClCompile Include="Timer.cpp" />
-    <ClCompile Include="WeatherStation.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="AlarmClockImp.h" />
-    <ClInclude Include="AlarmListener.h" />
-    <ClInclude Include="BrometricPressureAlarmListener.h" />
-    <ClInclude Include="BrometricPressureObserver.h" />
-    <ClInclude Include="BrometricPressureSensor.h" />
-    <ClInclude Include="BrometricPressureSensorImp.h" />
-    <ClInclude Include="ClockListener.h" />
-    <ClInclude Include="DataToolkit.h" />
-    <ClInclude Include="DataToolkitImp.h" />
-    <ClInclude Include="Date.h" />
-    <ClInclude Include="HiLoData.h" />
-    <ClInclude Include="HiLoDataImp.h" />
-    <ClInclude Include="HiLoDataProxy.h" />
-    <ClInclude Include="MonitoringScreen.h" />
-    <ClInclude Include="Nimbus1_0AlarmClock.h" />
-    <ClInclude Include="Nimbus1_0BrometricPressureSensor.h" />
-    <ClInclude Include="Nimbus1_0Persistent.h" />
-    <ClInclude Include="Nimbus1_0StationToolkit.h" />
-    <ClInclude Include="Nimbus1_0TemperatureSensor.h" />
-    <ClInclude Include="Observable.h" />
-    <ClInclude Include="Observer.h" />
-    <ClInclude Include="AlarmClock.h" />
-    <ClInclude Include="PersistentImp.h" />
-    <ClInclude Include="Serializable.h" />
-    <ClInclude Include="StationToolkit.h" />
-    <ClInclude Include="TemperatureHiLo.h" />
-    <ClInclude Include="TemperatureObserver.h" />
-    <ClInclude Include="TemperatureSensor.h" />
-    <ClInclude Include="TemperatureAlarmListener.h" />
-    <ClInclude Include="TemperatureSensorImp.h" />
-    <ClInclude Include="Timer.h" />
-    <ClInclude Include="WeatherStation.h" />
-    <ClInclude Include="WeatherStationComponent.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

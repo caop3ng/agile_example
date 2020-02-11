@@ -1,5 +1,5 @@
 #pragma once
-#include "WeatherStationComponent.h"
+#include "../ws_component/WeatherStationComponent.h"
 
 class Observer;
 class TemperatureSensor;

@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
-#include "Date.h"
-#include "HiLoData.h"
+#include "../util/Date.h"
+#include "../wmsdata/HiLoData.h"
 
 class HiLoDataImp;
 class StationToolkit;

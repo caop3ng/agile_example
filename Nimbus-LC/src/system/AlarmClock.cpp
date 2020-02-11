@@ -1,7 +1,7 @@
 #include "AlarmClock.h"
-#include "AlarmClockImp.h"
+#include "../api/AlarmClockImp.h"
 #include "AlarmListener.h"
-#include "StationToolkit.h"
+#include "../api/StationToolkit.h"
 #include <time.h>
 
 using namespace std;

@@ -1,8 +1,8 @@
 #include "HiLoDataProxy.h"
-#include "HiLoDataImp.h"
-#include "StationToolkit.h"
-#include "PersistentImp.h"
-#include "Date.h"
+#include "../wmsdata_imp/HiLoDataImp.h"
+#include "../api/StationToolkit.h"
+#include "../api/PersistentImp.h"
+#include "../util/Date.h"
 
 using namespace std;
 

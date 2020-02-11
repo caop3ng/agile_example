@@ -1,5 +1,5 @@
 #include "Nimbus1_0AlarmClock.h"
-#include "Timer.h"
+#include "../util/Timer.h"
 
 void Nimbus1_0AlarmClock::regist(ClockListener* cl)
 {

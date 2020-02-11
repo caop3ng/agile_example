@@ -1,9 +1,9 @@
 #include "BrometricPressureSensor.h"
 #include "Observer.h"
 #include "AlarmClock.h"
-#include "BrometricPressureSensorImp.h"
+#include "../api/BrometricPressureSensorImp.h"
 #include "BrometricPressureAlarmListener.h"
-#include "StationToolkit.h"
+#include "../api/StationToolkit.h"
 
 BrometricPressureSensor::BrometricPressureSensor(AlarmClock* ac, StationToolkit* st)
 {

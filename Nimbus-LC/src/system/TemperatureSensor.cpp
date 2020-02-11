@@ -2,8 +2,8 @@
 #include "Observer.h"
 #include "AlarmClock.h"
 #include "TemperatureAlarmListener.h"
-#include "TemperatureSensorImp.h"
-#include "StationToolkit.h"
+#include "../api/TemperatureSensorImp.h"
+#include "../api/StationToolkit.h"
 
 TemperatureSensor::TemperatureSensor(AlarmClock* ac, StationToolkit* st)
 {

@@ -1,11 +1,10 @@
 #pragma once
 #include <string>
-#include "Serializable.h"
-#include "HiLoData.h"
+#include "../wmsdata/HiLoData.h"
 
 class Date;
 
-class HiLoDataImp : public Serializable, public HiLoData
+class HiLoDataImp : public HiLoData
 {
 public:
   HiLoDataImp(/*std::string type, Date* dt, double init, long initTime*/);

@@ -1,5 +1,5 @@
 #include "TemperatureObserver.h"
-#include "MonitoringScreen.h"
+#include "../ui/MonitoringScreen.h"
 
 TemperatureObserver::TemperatureObserver(MonitoringScreen* ms)
   : ms_(ms)
