@@ -14,13 +14,18 @@ TemperatureSensor::TemperatureSensor(AlarmClock* ac, StationToolkit* st)
 
 void TemperatureSensor::check()
 {
-  double val = tsi_->read();
+  double val = read();
 
   if (val != last_reading_)
   {
     last_reading_ = val;
     NotifyObservers(last_reading_);
   }
+}
+
+double TemperatureSensor::read()
+{
+  return tsi_->read();
 }
 
 void TemperatureSensor::NotifyObservers(double temp)

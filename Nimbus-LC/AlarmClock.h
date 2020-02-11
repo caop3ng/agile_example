@@ -14,6 +14,7 @@ public:
   AlarmClock(StationToolkit* st);
   void tic() final;
   void wakeEvery(int ms, AlarmListener*);
+  void wakeEveryDay(AlarmListener*);
 
 private:
   AlarmClockImp* aci_;
@@ -25,6 +26,7 @@ private:
     AlarmListener* al;
   };
 
-  std::vector<Listener> listeners_;
+  std::vector<Listener> ms_listeners_;
+  std::vector<AlarmListener*> day_listeners_;
   std::mutex m_;
 };

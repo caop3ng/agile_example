@@ -14,6 +14,7 @@ public:
   TemperatureSensor(AlarmClock*, StationToolkit* st);
 
   void check();
+  double read();
 
   void NotifyObservers(double);
 

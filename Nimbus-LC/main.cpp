@@ -14,11 +14,13 @@
 #include "Nimbus1_0StationToolkit.h"
 #include "WeatherStation.h"
 #include "MonitoringScreen.h"
+#include "DataToolkitImp.h"
 
 int main()
 {
   StationToolkit* st = new Nimbus1_0StationToolkit();
-  WeatherStationComponent* wsc = new WeatherStation(st);
+  DataToolkit* dt = new DataToolkitImp(st);
+  WeatherStationComponent* wsc = new WeatherStation(st, dt);
   MonitoringScreen* ms = new MonitoringScreen(wsc);
 
   while (1)

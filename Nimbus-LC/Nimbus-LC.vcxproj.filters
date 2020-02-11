@@ -20,6 +20,18 @@
     <Filter Include="src\WeatherStationComponent">
       <UniqueIdentifier>{7db9bf37-09e5-46d4-b6c6-f1dd1bed8092}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\util">
+      <UniqueIdentifier>{5f4c0e6e-106d-4b12-bd55-7b9b3cf15954}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\wsmdata">
+      <UniqueIdentifier>{b8d1b3ac-4c04-44ec-b3de-e8ac55ad463d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\wsmdata_imp">
+      <UniqueIdentifier>{5fd341b5-3500-4683-a791-f5dc6f5effe6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\persistence">
+      <UniqueIdentifier>{41176fc9-6c75-4769-ac52-147bf8577fa7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Nimbus1_0AlarmClock.cpp">
@@ -69,6 +81,24 @@
     </ClCompile>
     <ClCompile Include="BrometricPressureObserver.cpp">
       <Filter>src\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="Date.cpp">
+      <Filter>src\util</Filter>
+    </ClCompile>
+    <ClCompile Include="TemperatureHiLo.cpp">
+      <Filter>src\system</Filter>
+    </ClCompile>
+    <ClCompile Include="Nimbus1_0Persistent.cpp">
+      <Filter>src\Nimbus1_0</Filter>
+    </ClCompile>
+    <ClCompile Include="HiLoDataImp.cpp">
+      <Filter>src\wsmdata_imp</Filter>
+    </ClCompile>
+    <ClCompile Include="DataToolkitImp.cpp">
+      <Filter>src\persistence</Filter>
+    </ClCompile>
+    <ClCompile Include="HiLoDataProxy.cpp">
+      <Filter>src\persistence</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -140,6 +170,36 @@
     </ClInclude>
     <ClInclude Include="WeatherStationComponent.h">
       <Filter>src\WeatherStationComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="PersistentImp.h">
+      <Filter>src\api</Filter>
+    </ClInclude>
+    <ClInclude Include="Serializable.h">
+      <Filter>src\api</Filter>
+    </ClInclude>
+    <ClInclude Include="Date.h">
+      <Filter>src\util</Filter>
+    </ClInclude>
+    <ClInclude Include="TemperatureHiLo.h">
+      <Filter>src\system</Filter>
+    </ClInclude>
+    <ClInclude Include="Nimbus1_0Persistent.h">
+      <Filter>src\Nimbus1_0</Filter>
+    </ClInclude>
+    <ClInclude Include="HiLoData.h">
+      <Filter>src\wsmdata</Filter>
+    </ClInclude>
+    <ClInclude Include="DataToolkit.h">
+      <Filter>src\wsmdata</Filter>
+    </ClInclude>
+    <ClInclude Include="HiLoDataImp.h">
+      <Filter>src\wsmdata_imp</Filter>
+    </ClInclude>
+    <ClInclude Include="DataToolkitImp.h">
+      <Filter>src\persistence</Filter>
+    </ClInclude>
+    <ClInclude Include="HiLoDataProxy.h">
+      <Filter>src\persistence</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
