@@ -4,10 +4,18 @@
 #include "PersistentImp.h"
 #include "Date.h"
 
+using namespace std;
+
 HiLoDataProxy::HiLoDataProxy(StationToolkit* st, HiLoDataImp* hdi)
   : hdi_(hdi)
 {
   pi_ = st->MakePersistentImp();
+  //
+  Date dt;
+  CalcStorageKey(dt);
+  
+  string value = pi_->retrieve(storage_key_);
+  // parse value to HiLoData;
 }
 
 bool HiLoDataProxy::CurrentReading(double current, long time)
@@ -25,15 +33,18 @@ void HiLoDataProxy::NewDay(double initial, long time)
 {
   store();
   hdi_->NewDay(initial, time);
-  CalcStorageKey(Date());
+  Date dt;
+  CalcStorageKey(dt);
   store();
 }
 
 void HiLoDataProxy::store()
 {
+  string value;
+  // serialize HiLoDataImp as value
   try
   {
-    pi_->store(storage_key_, hdi_);
+    pi_->store(storage_key_, value);
   }
   catch (...)
   {
