@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="src\Part.h" />
+    <ClInclude Include="src\PartExtension.h" />
+    <ClInclude Include="src\PiecePart.h" />
+    <ClInclude Include="src\XMLPartExtension.h" />
+    <ClInclude Include="src\xml\tinyxml2.h" />
+    <ClInclude Include="src\XMLPiecePartExtension.h" />
+    <ClInclude Include="src\Assembly.h" />
+    <ClInclude Include="src\XMLAssemblyExtension.h" />
+    <ClInclude Include="src\CSVPartExtension.h" />
+    <ClInclude Include="src\CSVPiecePartExtension.h" />
+    <ClInclude Include="src\CSVAssemblyExtension.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\PiecePart.cpp" />
+    <ClCompile Include="src\xml\tinyxml2.cpp" />
+    <ClCompile Include="src\XMLPiecePartExtension.cpp" />
+    <ClCompile Include="src\Assembly.cpp" />
+    <ClCompile Include="src\XMLAssemblyExtension.cpp" />
+    <ClCompile Include="src\CSVPiecePartExtension.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\CSVAssemblyExtension.cpp" />
+  </ItemGroup>
+</Project>
