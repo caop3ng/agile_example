@@ -42,6 +42,11 @@ bool Employee::IsPayDate(Date dt) const
   return itsSchedule->IsPayDate(dt);
 }
 
+Date Employee::GetPayPeriodStartDate(Date payDate) const
+{
+  return itsSchedule->GetPayPeriodStartDate(payDate);
+}
+
 void Employee::SetName(const std::string name)
 {
   itsName = name;

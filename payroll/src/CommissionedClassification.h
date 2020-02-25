@@ -19,6 +19,9 @@ public:
   SalesReceipt* GetSalesReceipt(Date dt) const;
 
 private:
+
+  bool IsInPayPeriod(SalesReceipt*, Date endPeriod) const;
+
   double itsSalary{ -1 };
   double itsCommissionRate{ -1 };
 

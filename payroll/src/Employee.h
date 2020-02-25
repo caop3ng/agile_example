@@ -22,6 +22,7 @@ public:
   PaymentMethod* GetMethod() const;
   Affiliation* GetAffiliation() const;
   bool IsPayDate(Date dt) const;
+  Date GetPayPeriodStartDate(Date payDate) const;
 
   void SetName(const std::string);
   void SetClassification(PaymentClassification*);

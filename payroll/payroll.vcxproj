@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Application.cpp" />
     <ClCompile Include="src\ChangeAffiliationTransaction.cpp" />
     <ClCompile Include="src\ChangeClassificationTransaction.cpp" />
     <ClCompile Include="src\ChangeCommissionedTransaction.cpp" />
@@ -30,14 +31,18 @@
     <ClCompile Include="src\ChangeNameTransaction.cpp" />
     <ClCompile Include="src\ChangeSalariedTransaction.cpp" />
     <ClCompile Include="src\ChangeUnaffiliationTransaction.cpp" />
+    <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\NoAffiliation.cpp" />
     <ClCompile Include="src\Paycheck.cpp" />
     <ClCompile Include="src\PaydayTransaction.cpp" />
+    <ClCompile Include="src\PayrollApplication.cpp" />
     <ClCompile Include="src\ServiceCharge.cpp" />
     <ClCompile Include="src\ServiceChargeTransaction.cpp" />
     <ClCompile Include="src\Affiliation.cpp" />
     <ClCompile Include="src\SalesReceipt.cpp" />
     <ClCompile Include="src\SalesReceiptTransaction.cpp" />
+    <ClCompile Include="src\TextParserTransactionSource.cpp" />
+    <ClCompile Include="src\TransactionSource.cpp" />
     <ClCompile Include="src\UnionAffiliation.cpp" />
     <ClCompile Include="util\Date.cpp" />
     <ClCompile Include="src\DeleteEmployeeTransaction.cpp" />
@@ -57,13 +62,13 @@
     <ClCompile Include="src\MonthlySchedule.cpp" />
     <ClCompile Include="src\PaymentClassification.cpp" />
     <ClCompile Include="src\PaymentSchedule.cpp" />
-    <ClCompile Include="src\payroll.cpp" />
     <ClCompile Include="src\PayrollDatabase.cpp" />
     <ClCompile Include="src\WeeklySchedule.cpp" />
     <ClCompile Include="src\TimeCard.cpp" />
     <ClCompile Include="src\TimeCardTransaction.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Application.h" />
     <ClInclude Include="src\ChangeAffiliationTransaction.h" />
     <ClInclude Include="src\ChangeClassificationTransaction.h" />
     <ClInclude Include="src\ChangeCommissionedTransaction.h" />
@@ -78,11 +83,14 @@
     <ClInclude Include="src\NoAffiliation.h" />
     <ClInclude Include="src\Paycheck.h" />
     <ClInclude Include="src\PaydayTransaction.h" />
+    <ClInclude Include="src\PayrollApplication.h" />
     <ClInclude Include="src\ServiceCharge.h" />
     <ClInclude Include="src\ServiceChargeTransaction.h" />
     <ClInclude Include="src\Affiliation.h" />
     <ClInclude Include="src\SalesReceipt.h" />
     <ClInclude Include="src\SalesReceiptTransaction.h" />
+    <ClInclude Include="src\TextParserTransactionSource.h" />
+    <ClInclude Include="src\TransactionSource.h" />
     <ClInclude Include="src\UnionAffiliation.h" />
     <ClInclude Include="util\Date.h" />
     <ClInclude Include="src\DeleteEmployeeTransaction.h" />

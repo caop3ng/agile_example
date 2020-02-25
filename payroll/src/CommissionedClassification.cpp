@@ -7,9 +7,18 @@ CommissionedClassification::CommissionedClassification(double salary, double com
 
 }
 
-double CommissionedClassification::CalculatePay(Paycheck&) const
+double CommissionedClassification::CalculatePay(Paycheck& pc) const
 {
-  return 0;
+  double commission = 0;
+  for (auto sr : itsSalesReceipts)
+  {
+    if (IsInPayPeriod(sr, pc.GetPayDate()))
+    {
+      commission += sr->GetAmount() * itsCommissionRate;
+    }
+  }
+
+  return itsSalary + commission;
 }
 
 double CommissionedClassification::GetSalary() const
@@ -38,4 +47,16 @@ SalesReceipt* CommissionedClassification::GetSalesReceipt(Date dt) const
   }
 
   return nullptr;
+}
+
+bool CommissionedClassification::IsInPayPeriod(SalesReceipt* sr, Date endPeriod) const
+{
+  Date begin = endPeriod - 13;
+  if (begin < sr->GetDate()
+    && sr->GetDate() <= endPeriod)
+  {
+    return true;
+  }
+
+  return false;
 }

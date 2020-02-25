@@ -23,7 +23,7 @@ void PaydayTransaction::Execute()
     auto e = GpayrollDatabase.GetEmployee(empId);
     if (e && e->IsPayDate(itsPayDate))
     {
-      Paycheck* pc = new Paycheck(itsPayDate);
+      Paycheck* pc = new Paycheck(e->GetPayPeriodStartDate(itsPayDate), itsPayDate);
       itsPaychecks[empId] = pc;
       e->Payday(*pc);
     }

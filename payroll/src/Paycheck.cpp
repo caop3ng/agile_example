@@ -2,14 +2,14 @@
 
 using namespace std;
 
-Paycheck::Paycheck(Date payDate)
-  : itsPayDate(payDate)
+Paycheck::Paycheck(Date beginPayDate, Date endPayDate)
+  : itsBeginPayDate(beginPayDate), itsEndPayDate(endPayDate)
 {
 }
 
 Date Paycheck::GetPayDate() const
 {
-  return itsPayDate;
+  return itsEndPayDate;
 }
 
 double Paycheck::GetGrossPay() const
@@ -47,7 +47,12 @@ std::string Paycheck::GetField(const std::string& field) const
   return string();
 }
 
+Date Paycheck::GetPayPeriodStartDate() const
+{
+  return itsBeginPayDate;
+}
+
 Date Paycheck::GetPayPeriodEndDate() const
 {
-  return Date();
+  return itsEndPayDate;
 }
