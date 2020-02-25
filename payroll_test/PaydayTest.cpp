@@ -151,3 +151,16 @@ TEST(PyadayTest, PaySingleHourlyEmployeeWithTimeCardsSpanningTwoPayPeriods)
 
   ValidatePaycheck(pt, empId, payDate, 2 * 15.25);
 }
+
+TEST(PaydayTest, PayCommissionedEmployeeNoSalesReceipt)
+{
+  int empId = ++MAX_EMP_ID;
+  AddCommissionedEmployee t(empId, "uuu", "Home", 2000, 15.5);
+  t.Execute();
+
+  Date payDate(11, 9, 2001);
+  PaydayTransaction pt(payDate);
+  pt.Execute();
+
+  ValidatePaycheck(pt, empId, payDate, 2000);
+}
